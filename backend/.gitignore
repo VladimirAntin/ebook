@@ -24,4 +24,7 @@ nbdist/
 .nb-gradle/
 
 index
-.mvn
+.mvn/
+mvnw
+mvnw.cmd
+
