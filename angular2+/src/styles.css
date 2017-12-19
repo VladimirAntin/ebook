@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.spacer {
+  flex: 1 1 auto;
+}
+.full-width {
+  width: 100%;
+}
+
+.f16{
+  font-size:20px
+}
+
+.width-90 {
+  width: 90%;
+}
+
+.dialog-600x400{
+  height: 400px;
+  width: 600px;
+}
+
+.dialog-600x600{
+  height: 600px;
+  width: 600px;
+}

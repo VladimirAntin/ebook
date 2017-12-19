@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Add new user</h2>
+<mat-dialog-content>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="First name" maxlength="30" [(ngModel)]="data.user.firstName" required>
+    <mat-hint align="end">{{data.user.firstName.length}}/30</mat-hint>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Last name" maxlength="30" [(ngModel)]="data.user.lastName" required>
+    <mat-hint align="end">{{data.user.lastName.length}}/30</mat-hint>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Username" maxlength="30" [(ngModel)]="data.user.username" required>
+    <mat-hint align="end">{{data.user.username.length}}/30</mat-hint>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Password" type="password" maxlength="20" [(ngModel)]="data.user.password" required>
+    <mat-hint align="end">{{data.user.password.length}}/20</mat-hint>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="full-width">
+    <mat-select placeholder="Authority" [(ngModel)]="data.user.authorities" required>
+      <mat-option *ngFor="let authority of authorities" [value]="authority.value">
+        {{ authority.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-select placeholder="Categories" [(ngModel)]="data.user.categories" multiple>
+      <mat-option *ngFor="let c of categories" [value]="c">{{c.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-icon-button [mat-dialog-close]="{result:true, user:data.user }"
+          color="primary" matTooltip="Add new"
+          [disabled]="data.user.username.trim()==='' ||
+                      data.user.firstName.trim()==='' ||
+                      data.user.lastName.trim()==='' ||
+                      data.user.password.trim()===''">
+    <mat-icon>add</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <button mat-icon-button mat-dialog-close matTooltip="Close">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-dialog-actions>

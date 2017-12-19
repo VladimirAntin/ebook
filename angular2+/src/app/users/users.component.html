@@ -1,0 +1,53 @@
+<div>
+  <div style="padding: 8px 24px 0">
+    <mat-form-field class="full-width f20">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    <mat-toolbar>
+      <button mat-fab color="primary" (click)="addUser()" matTooltip="Add new user">
+        <mat-icon>add</mat-icon>
+      </button>
+      <span class="spacer"></span>
+      <button mat-fab color="primary" (click)="getAll()" matTooltip="Refresh">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+  <mat-spinner *ngIf="loading"></mat-spinner>
+  <mat-table *ngIf="!loading" #table [dataSource]="users">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> First name </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.firstName}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="surname">
+      <mat-header-cell *matHeaderCellDef> Last name </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.lastName}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.username}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="roles">
+      <mat-header-cell *matHeaderCellDef> Roles </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.authorities}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="options">
+      <mat-header-cell *matHeaderCellDef> Options </mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <a mat-button color="primary" [routerLink]="['/users',user.username]">
+          Open
+        </a>
+        <button *ngIf="user.authorities.indexOf('pretplatilac')>-1" mat-button color="warn" (click)="deleteUser(user)">
+          Delete
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator #paginator
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 20, 50, 100]">
+  </mat-paginator>
+</div>
