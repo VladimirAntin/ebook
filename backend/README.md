@@ -1,3 +1,14 @@
-mvn install
+###backend app - spring boot
+install plugin for lombok
 
-mvn spring-boot:run
+    eclipse - [link](https://projectlombok.org/setup/eclipse)
+        or
+    IntelliJ - [link](https://projectlombok.org/setup/intellij)
+
+spring configuration
+
+    mvn install
+    mvn spring-boot:run
+
+    
+    

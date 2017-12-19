@@ -107,10 +107,7 @@ public class UserController {
     }
     @PutMapping("/{id}/password")
     @PreAuthorize("hasAnyRole('ADMIN','PRETPLATILAC')")
-    public ResponseEntity password(@PathVariable long id, @RequestBody UserDto dto, Errors errors, Principal principal){
-        if(errors.hasErrors()){
-            return ResponseEntity.badRequest().build();
-        }
+    public ResponseEntity password(@PathVariable long id, @RequestBody UserDto dto, Principal principal){
         if(userService.findByUsername(principal.getName()).getId()!=id){
             return new ResponseEntity(HttpStatus.FORBIDDEN);
         }
