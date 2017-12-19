@@ -46,13 +46,7 @@ export class UsersComponent implements OnInit {
           verticalPosition: 'top'
         });
       }else {
-        this.snackBar.open(
-          'You do not have permission to do this, you will be redirected to the homepage',
-          'OK', {
-          duration: 6000,
-          verticalPosition: 'top'
-        });
-        setTimeout(() => window.location.replace('/') , 6000);
+        this.users.data = null;
       }
     });
   }

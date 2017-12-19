@@ -1,0 +1,19 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>Ebook</span>
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="!nav_items || nav_items.length==0">
+    <mat-spinner></mat-spinner>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button *ngFor="let nav of nav_items" mat-button color="primary" [routerLink]="[nav.route]">
+      {{nav.name}}
+    </button>
+    <a mat-button *ngIf="login" color="primary" href="{{'users/'+me.username}}">Profile</a>
+    <span class="spacer"></span>
+    <button mat-button *ngIf="login" color="primary">Change password</button>
+    <button mat-button *ngIf="login" color="primary" (click)="editProfile()">Edit profile</button>
+    <button mat-button *ngIf="!login" (click)="loginPage()">Login</button>
+    <button mat-button *ngIf="login" (click)="logout()">Logout</button>
+  </mat-toolbar-row>
+</mat-toolbar>

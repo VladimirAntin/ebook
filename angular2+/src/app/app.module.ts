@@ -19,13 +19,16 @@ import {CategoryService} from './services/category.service';
 import {AppRoutingModule} from './app-routing.module';
 import { UserComponent } from './users/user/user.component';
 import { enableProdMode } from '@angular/core';
+import { NavigationComponent } from './navigation/navigation.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 enableProdMode();
 
 @NgModule({
   declarations: [
     AppComponent, HomeComponent, LoginComponent, UsersComponent,
-    AddUserComponent, UserComponent
+    AddUserComponent, UserComponent, NavigationComponent, EditUserComponent, NotFoundComponent
   ],
   imports: [
     AppRoutingModule,
@@ -41,7 +44,7 @@ enableProdMode();
     MatIconModule, MatProgressSpinnerModule, MatTooltipModule, MatSelectModule,
     MatSnackBarModule, MatChipsModule
   ],
-  entryComponents: [ LoginComponent, AddUserComponent ],
+  entryComponents: [ LoginComponent, AddUserComponent, EditUserComponent ],
   providers: [ AuthService, UserService, CategoryService ],
   bootstrap: [AppComponent]
 })

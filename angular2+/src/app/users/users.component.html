@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="users.data!==null">
   <div style="padding: 8px 24px 0">
     <mat-form-field class="full-width f20">
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
@@ -51,3 +51,4 @@
                  [pageSizeOptions]="[5, 10, 20, 50, 100]">
   </mat-paginator>
 </div>
+<app-not-found *ngIf="users.data===null"></app-not-found>

@@ -12,18 +12,8 @@ import { AuthService } from '../../services/auth.service';
 export class UserComponent implements OnInit {
   id;
   user = new UserApi();
-  authorities =
-    [
-      {
-        name: 'Admin',
-        value: ['admin'],
-      },
-      {
-        name: 'Pretplatilac',
-        value: ['pretplatilac']
-      }
-    ];
   isAdmin;
+  loginIsAdmin;
   constructor(private route: ActivatedRoute, private userService: UserService, private authService: AuthService) {}
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
@@ -37,10 +27,10 @@ export class UserComponent implements OnInit {
     this.userService.get(this.id).subscribe(data => {
       this.user = data;
       this.isAdmin = data.authorities.indexOf('admin') !== -1;
-    });
-//    this.authService.me().subscribe(data => {
-//      this.isAdmin = data.authorities.indexOf('admin') !== -1;
-//    });
+    }, () => this.user = null);
+   this.authService.me().subscribe(data => {
+     this.loginIsAdmin = data.authorities.indexOf('admin') !== -1;
+   });
   }
 
 }
