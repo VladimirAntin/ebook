@@ -1,4 +1,4 @@
-import {Category} from './category';
+import {CategoryOrLang} from './category-or-lang';
 
 export class UserApi {
   id: number;
@@ -7,7 +7,7 @@ export class UserApi {
   username: string;
   password: string;
   authorities: string[];
-  categories: Category[];
+  categories: CategoryOrLang[];
 
   public empty() {
     this.id = 0;

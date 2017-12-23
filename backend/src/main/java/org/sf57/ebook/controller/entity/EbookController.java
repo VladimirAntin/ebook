@@ -60,6 +60,7 @@ public class EbookController {
     @PostMapping(value = "upload")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity upload(@RequestParam("file") MultipartFile file) {
+        System.out.println(file.getOriginalFilename());
         File newFile = toFile.convert(file);
         if(newFile==null){
             return ResponseEntity.badRequest().body("");

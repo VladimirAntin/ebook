@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>{{data.title}}</h2>
+<mat-dialog-content>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Name" maxlength="30" [(ngModel)]="data.lang.name" required>
+    <mat-hint align="end">{{data.lang.name.length}}/30</mat-hint>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-icon-button [mat-dialog-close]="{result:true, lang:data.lang}"
+          color="primary" matTooltip="{{data.tooltip}}"
+          [disabled]="data.lang.name.trim()===''">
+    <mat-icon>{{data.icon}}</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <button mat-icon-button mat-dialog-close matTooltip="Close">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-dialog-actions>

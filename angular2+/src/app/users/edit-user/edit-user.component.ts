@@ -1,7 +1,8 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {CategoryService} from '../../services/category.service';
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from '../../services/auth.service';
+import {CategoryOrLang} from '../../model/category-or-lang';
 
 @Component({
   selector: 'app-edit-user',
@@ -21,7 +22,7 @@ export class EditUserComponent {
         value: ['pretplatilac']
       }
     ];
-  categories;
+  categories: CategoryOrLang[];
   isAdmin = false;
   userIsAdmin = false;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private categoryService: CategoryService,
@@ -43,9 +44,10 @@ export class EditUserComponent {
   private getMe() {
     this.authService.me().subscribe(data => {
       if (data.authorities.indexOf('admin') !== -1) {
-      this.isAdmin = true;
-    }
+        this.isAdmin = true;
+      }
     });
   }
+  categoryCompare(c1: CategoryOrLang, c2: CategoryOrLang) { return c1.id === c2.id; }
 
 }

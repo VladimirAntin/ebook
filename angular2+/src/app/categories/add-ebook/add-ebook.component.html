@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>Add new Ebook</h2>
+<mat-dialog-content>
+  <mat-horizontal-stepper linear>
+    <mat-step [stepControl]="step1">
+      <ng-template matStepLabel>Upload file</ng-template>
+      <form [formGroup]="step1">
+        <input type="file" (change)="fileChange($event)" placeholder="Upload"
+               accept=".pdf" formControlName="firstCtrl" required>
+      </form>
+      <br>
+      <button mat-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Edit Ebook</ng-template>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Title" maxlength="80" [(ngModel)]="ebook.title" required>
+        <mat-hint align="end">{{ebook.title.length}}/80</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Author" maxlength="120" [(ngModel)]="ebook.author" required>
+        <mat-hint align="end">{{ebook.author.length}}/120</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Publication Year" type="number" [(ngModel)]="ebook.publicationYear" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-chip-list #keywordList>
+          <mat-chip *ngFor="let key of keywords"
+                    [removable]="true" (remove)="removeKey(key)">
+            {{key}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="new key"
+                 [matChipInputFor]="keywordList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="true"
+                 (matChipInputTokenEnd)="addKey($event)" />
+        </mat-chip-list>
+        <mat-hint align="end">{{ebook.keywords.length}}/120</mat-hint>
+        <mat-hint>Please add keywords</mat-hint>
+      </mat-form-field>
+    </mat-step>
+  </mat-horizontal-stepper>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <span class="spacer"></span>
+  <button mat-button [mat-dialog-close]="false">Close</button>
+</mat-dialog-actions>

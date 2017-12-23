@@ -1,0 +1,25 @@
+<div *ngIf="isAdmin">
+  <div style="padding: 8px 24px 0">
+    <mat-form-field class="full-width f20">
+      <input matInput placeholder="Filter" [(ngModel)]="filter">
+    </mat-form-field>
+    <mat-toolbar>
+      <button mat-fab color="primary" matTooltip="Add new language" (click)="add()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <span class="spacer"></span>
+      <button mat-fab color="primary" (click)="getAll()" matTooltip="Refresh">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+  <mat-list>
+    <mat-list-item *ngFor="let l of languages | search:'name':filter">
+      <mat-icon mat-list-icon>web_asset</mat-icon>
+      <h4 mat-line>{{l.name}}</h4>
+      <button mat-button color="accent" *ngIf="isAdmin" (click)="edit(l)"> Update </button>
+      <button mat-button color="warn" *ngIf="isAdmin" (click)="deleteLanguage(l)"> Delete </button>
+    </mat-list-item>
+  </mat-list>
+</div>
+<app-not-found *ngIf="!isAdmin"></app-not-found>

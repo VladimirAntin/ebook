@@ -5,6 +5,7 @@ import {MatDialog, MatSnackBar} from '@angular/material';
 import {UserApi} from '../model/user-api';
 import {User} from '../model/user';
 import {EditUserComponent} from '../users/edit-user/edit-user.component';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-navigation',
@@ -16,7 +17,8 @@ export class NavigationComponent {
   nav_items;
   login: boolean;
   me = new UserApi();
-  constructor(public dialog: MatDialog, private authService: AuthService, public snackBar: MatSnackBar) {
+  constructor(public dialog: MatDialog, private authService: AuthService,
+              private userService: UserService, public snackBar: MatSnackBar) {
     this.check();
   }
 
@@ -57,9 +59,7 @@ export class NavigationComponent {
     });
   }
 
-  logout() {
-    this.authService.logout();
-  }
+  logout() { this.authService.logout(); }
 
   private navItems() {
     this.authService.nav_items().subscribe(data => {
@@ -74,11 +74,22 @@ export class NavigationComponent {
     const dialogRef = this.dialog.open(EditUserComponent, {
       panelClass: 'dialog-600x600',
       data: {
-        user: this.me
+        user: Object.assign({}, this.me)
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {}
+      if (result) {
+        this.userService.update(result.user).subscribe(data => {
+          this.me = data;
+          this.snackBar.open('Successfully changed!', 'Ok', {
+            duration: 4000,
+            verticalPosition: 'top'
+          });
+          if (window.location.href.indexOf('users') !== -1) {
+            window.location.reload();
+          }
+        });
+      }
     });
   }
 }

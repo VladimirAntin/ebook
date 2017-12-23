@@ -30,4 +30,7 @@ export class UserService {
       return this.http.get<UserApi>(`${this.users}${id}`, this.httpOptions);
     }
   }
+  update(user: UserApi) {
+    return this.http.put<UserApi>(`${this.users}${user.id}`, user, this.httpOptions);
+  }
 }

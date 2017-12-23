@@ -1,10 +1,12 @@
 package org.sf57.ebook.controller.entity;
 
 import org.sf57.ebook.converter.EbookToEbookDto;
+import org.sf57.ebook.converter.UserToUserDto;
 import org.sf57.ebook.entity.Category;
 import org.sf57.ebook.service.CategoryService;
 import org.sf57.ebook.service.EbookService;
 import org.sf57.ebook.service.IndexService;
+import org.sf57.ebook.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,10 +25,16 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private EbookService ebookService;
 
     @Autowired
     private EbookToEbookDto toDto;
+
+    @Autowired
+    private UserToUserDto toUserDto;
 
     @Autowired
     private IndexService indexService;
@@ -57,6 +65,10 @@ public class CategoryController {
     public ResponseEntity ebooks(@PathVariable long id, Principal principal){
         return ResponseEntity.ok(indexService.filterEbooks(
                 toDto.convert(ebookService.findEbooksByCategory(categoryService.findOne(id))),principal.getName()));
+    }
+    @GetMapping("/{id}/users")
+    public ResponseEntity users(@PathVariable long id){
+        return ResponseEntity.ok(toUserDto.convert(userService.findByCategories(categoryService.findOne(id))));
     }
 
 

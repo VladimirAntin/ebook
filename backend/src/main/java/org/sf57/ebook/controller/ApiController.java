@@ -67,6 +67,7 @@ public class ApiController {
         if(authorities.stream().anyMatch(t -> t.getAuthority().equals("ROLE_ADMIN"))) {
             navItems.add(new NavItem("Users","/users",null));
             navItems.add(new NavItem("Categories","/categories",null));
+            navItems.add(new NavItem("Languages","/languages",null));
         }else {
             navItems.add(new NavItem("Categories","/categories",null));
         }

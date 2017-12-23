@@ -2,6 +2,7 @@ package org.sf57.ebook.service.impl;
 
 
 import org.sf57.ebook.entity.Authority;
+import org.sf57.ebook.entity.Category;
 import org.sf57.ebook.entity.User;
 import org.sf57.ebook.repo.AuthorityRepository;
 import org.sf57.ebook.repo.UserRepository;
@@ -10,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -81,5 +79,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public void delete(long id) {
         userRepository.delete(id);
+    }
+
+    @Override
+    public List<User> findByCategories(Category category) {
+        return userRepository.findByCategories(new ArrayList(Arrays.asList(category)));
     }
 }

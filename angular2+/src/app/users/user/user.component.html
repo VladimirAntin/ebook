@@ -18,9 +18,5 @@
       <mat-chip *ngIf="!user.categories || user.categories.length===0">None</mat-chip>
       <mat-chip color="accent" *ngFor="let c of user.categories">{{c.name}}</mat-chip>
     </mat-chip-list>
-  <br>
-  <button *ngIf="loginIsAdmin && !isAdmin" mat-fab color="primary" matTooltip="Edit user">
-    <mat-icon>edit</mat-icon>
-  </button>
 </div>
 <app-not-found *ngIf="user===null"></app-not-found>

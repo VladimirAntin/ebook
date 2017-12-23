@@ -21,3 +21,5 @@ INSERT INTO user_category(user_id,category_id) VALUES (2,3);
 INSERT INTO language(name) VALUES ('English');
 INSERT INTO language(name) VALUES ('Serbian');
 INSERT INTO language(name) VALUES ('German');
+
+-- INSERT INTO ebook(mime,author,filename,keywords,publication_year,title,category_id,language_id,user_id) VALUES ('mime','autor','files/Vezbe4.pdf','key',2007,'title',2,1,2);

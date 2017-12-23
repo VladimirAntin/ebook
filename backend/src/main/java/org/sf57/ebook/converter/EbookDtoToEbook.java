@@ -30,14 +30,14 @@ public class EbookDtoToEbook implements Converter<EbookDto,Ebook>{
 
     @Override
     public Ebook convert(EbookDto ebookDto) {
-        Ebook ebook = new Ebook();
-        ebook.setId(ebookDto.getId());
-        ebook.setTitle(ebookDto.getTitle());
-        ebook.setAuthor(ebookDto.getAuthor());
-        ebook.setKeywords(ebookDto.getKeywords());
-        ebook.setPublicationYear(ebookDto.getPublicationYear());
-        ebook.setFilename(ebookDto.getFilename());
-        ebook.setMIME(ebookDto.getMIME());
+        Ebook ebook = new Ebook()
+                .setId(ebookDto.getId())
+                .setTitle(ebookDto.getTitle())
+                .setAuthor(ebookDto.getAuthor())
+                .setKeywords(ebookDto.getKeywords())
+                .setPublicationYear(ebookDto.getPublicationYear())
+                .setFilename(ebookDto.getFilename())
+                .setMIME(ebookDto.getMIME());
         User user = userService.findByUsername(ebookDto.getUser());
         if(user!=null){
             ebook.setUser(user);

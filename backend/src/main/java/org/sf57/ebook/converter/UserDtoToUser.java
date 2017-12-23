@@ -21,11 +21,11 @@ public class UserDtoToUser implements Converter<UserDto,User>{
 
     @Override
     public User convert(UserDto dto) {
-        User user = new User();
-        user.setId(dto.getId());
-        user.setFirstName(dto.getFirstName());
-        user.setLastName(dto.getLastName());
-        user.setUsername(dto.getUsername());
+        User user = new User()
+                .setId(dto.getId())
+                .setFirstName(dto.getFirstName())
+                .setLastName(dto.getLastName())
+                .setUsername(dto.getUsername());
         if(dto.getPassword()!=null){
             user.setPassword(new BCryptPasswordEncoder().encode(dto.getPassword()));
         }

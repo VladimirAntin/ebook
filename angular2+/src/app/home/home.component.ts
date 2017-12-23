@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { saveAs } from 'file-saver';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
 
   url;
-  constructor(private http: HttpClient, private sanitize: DomSanitizer) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }

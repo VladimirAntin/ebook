@@ -12,18 +12,17 @@ import java.util.List;
 public class EbookToEbookDto implements Converter<Ebook,EbookDto>{
     @Override
     public EbookDto convert(Ebook ebook) {
-        EbookDto dto = new EbookDto();
-        dto.setId(ebook.getId());
-        dto.setTitle(ebook.getTitle());
-        dto.setAuthor(ebook.getAuthor());
-        dto.setKeywords(ebook.getKeywords());
-        dto.setPublicationYear(ebook.getPublicationYear());
-        dto.setFilename(ebook.getFilename());
-        dto.setMIME(ebook.getMIME());
-        dto.setCategory(ebook.getCategory().getId());
-        dto.setLanguage(ebook.getLanguage().getId());
-        dto.setUser(ebook.getUser().getUsername());
-        return dto;
+        return new EbookDto()
+                .setId(ebook.getId())
+                .setTitle(ebook.getTitle())
+                .setAuthor(ebook.getAuthor())
+                .setKeywords(ebook.getKeywords())
+                .setPublicationYear(ebook.getPublicationYear())
+                .setFilename(ebook.getFilename())
+                .setMIME(ebook.getMIME())
+                .setCategory(ebook.getCategory().getId())
+                .setLanguage(ebook.getLanguage().getId())
+                .setUser(ebook.getUser().getUsername());
     }
 
     public List<EbookDto> convert(List<Ebook> ebooks){

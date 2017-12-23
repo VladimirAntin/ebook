@@ -82,7 +82,7 @@ public class UserController {
         if(errors.hasErrors()){
             return ResponseEntity.badRequest().build();
         }
-        if(id!=userDto.getId() && userDto.getId()!=0){
+        if(id!=userDto.getId()){
             return new ResponseEntity(HttpStatus.CONFLICT);
         }
         User loginUser = userService.findByUsername(principal.getName());
@@ -91,7 +91,7 @@ public class UserController {
             return new ResponseEntity(HttpStatus.FORBIDDEN);
         }
         if(!loginUser.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_ADMIN"))
-                || loginUser.getId()!=id){
+                && loginUser.getId()!=id){
             return new ResponseEntity(HttpStatus.FORBIDDEN);
         }else if(loginUser.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_ADMIN")) &&
                 !user.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_ADMIN"))){

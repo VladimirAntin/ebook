@@ -15,12 +15,12 @@ import java.util.Set;
 public class UserToUserDto implements Converter<User,UserDto>{
     @Override
     public UserDto convert(User user) {
-        UserDto dto = new UserDto();
-        dto.setId(user.getId());
-        dto.setFirstName(user.getFirstName());
-        dto.setLastName(user.getLastName());
-        dto.setUsername(user.getUsername());
-        dto.setCategories(user.getCategories());
+        UserDto dto = new UserDto()
+                .setId(user.getId())
+                .setFirstName(user.getFirstName())
+                .setLastName(user.getLastName())
+                .setUsername(user.getUsername())
+                .setCategories(user.getCategories());
         Set<String> authorities = new HashSet<>();
         for (Authority a: (Set<Authority>)user.getAuthorities()) {
             authorities.add(a.getName().substring(5).toLowerCase());

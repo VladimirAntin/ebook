@@ -23,7 +23,8 @@
     </mat-select>
   </mat-form-field>
   <mat-form-field class="full-width" *ngIf="isAdmin && !userIsAdmin">
-    <mat-select placeholder="Categories" [(ngModel)]="data.user.categories" multiple>
+    <mat-select placeholder="Categories" [(ngModel)]="data.user.categories"
+               [compareWith]="categoryCompare" multiple>
       <mat-option *ngFor="let c of categories" [value]="c">{{c.name}}</mat-option>
     </mat-select>
   </mat-form-field>

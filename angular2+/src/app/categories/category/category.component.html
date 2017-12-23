@@ -1,0 +1,52 @@
+<div *ngIf="category!==null">
+  <h1 class="center">{{category.name}}</h1>
+  <div class="w45 left">
+    <div style="padding: 8px 24px 0">
+      <mat-form-field class="full-width f20">
+        <input matInput placeholder="Search users" [(ngModel)]="filterUser">
+      </mat-form-field>
+    </div>
+    <mat-list>
+      <mat-list-item *ngFor="let u of usersList| search:'username':filterUser">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <p mat-line>Username: <b class="right">{{u.username}}</b></p>
+        <p mat-line>Name: <b class="right">{{u.firstName + ' ' + u.lastName}}</b></p>
+        <p mat-line>Authorities: <b class="right">{{u.authorities}}</b></p>
+        <a mat-button color="primary" [routerLink]="['/users',u.username]">
+          Open
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="w45 right">
+    <div style="padding: 8px 24px 0">
+      <mat-form-field class="full-width f20">
+        <input matInput placeholder="Search ebooks" [(ngModel)]="filterEbook">
+      </mat-form-field>
+      <mat-toolbar *ngIf="isAdmin">
+        <button mat-fab color="primary" matTooltip="Add new ebook in category" (click)="add()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-toolbar>
+    </div>
+    <mat-list>
+      <mat-list-item *ngFor="let e of ebooks | search:'title,author,keywords,publicationYear':filterEbook">
+        <mat-icon mat-list-icon>web_asset</mat-icon>
+        <p mat-line><b>{{e.title}}</b></p>
+        <button mat-button color="primary" (click)="openPdf(e.href)" matTooltip="Open in new tab" *ngIf="e.filename">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+        <button mat-button color="primary" (click)="download(e.filename)" matTooltip="Download file" *ngIf="e.filename">
+          <mat-icon>file_download</mat-icon>
+        </button>
+        <button mat-button color="accent" *ngIf="isAdmin"> Update </button>
+        <button mat-button color="warn" *ngIf="isAdmin"> Delete </button>
+        <p mat-line>Author: <b class="right">{{e.author}}</b></p>
+        <p mat-line>Keywords: <b class="right">{{e.keywords}}</b></p>
+        <p mat-line>Publication Year: <b class="right">{{e.publicationYear}}</b></p>
+        <p mat-line>MIME: <b class="right">{{e.mime}}</b></p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+<app-not-found *ngIf="category===null"></app-not-found>
