@@ -6,7 +6,7 @@ import {UserApi} from '../model/user-api';
 @Injectable()
 export class UserService {
 
-  private users = 'http://localhost:8080/api/users/';
+  private users = '/api/users/';
   constructor(private http: HttpClient) { }
   private httpOptions = {
     headers: new HttpHeaders(

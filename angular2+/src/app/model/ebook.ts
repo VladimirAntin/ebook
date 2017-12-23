@@ -3,11 +3,12 @@ export class Ebook {
   title: string;
   author: string;
   keywords: string;
-  publicationYear: string;
+  publicationYear: number;
   filename: string;
   mime: string;
   href: string;
   category: number;
+  language: number;
   user: string;
 
   empty() {

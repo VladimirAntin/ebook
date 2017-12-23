@@ -9,8 +9,8 @@ import { UserApi } from '../model/user-api';
 @Injectable()
 export class AuthService {
 
-  private auth = 'http://localhost:8080/auth/';
-  private api = 'http://localhost:8080/api/';
+  // private auth = 'http://localhost:8080/auth/';
+  // private api = 'http://localhost:8080/api/';
   constructor(private http: HttpClient) { }
 
   loginPost(user: User): Observable<UserLogin> {
@@ -19,18 +19,15 @@ export class AuthService {
       headers: new HttpHeaders(
         { 'Content-Type': 'application/x-www-form-urlencoded' })
     };
-    return this.http.post<UserLogin>(`${this.auth}login`, body, httpOptions);
+    return this.http.post<UserLogin>('/auth/login', body, httpOptions);
   }
-
   setToken(data) {
     localStorage.setItem('token', `jwt ${data.access_token}`);
   }
-
   removeToken(): void {
     localStorage.removeItem('token');
     this.getDefault();
   }
-
   logout() {
     const token = localStorage.getItem('token');
     this.removeToken();
@@ -38,16 +35,13 @@ export class AuthService {
       headers: new HttpHeaders(
         { 'Authorization': token })
     };
-    this.http.get(`${this.auth}logout`, httpOptions).subscribe(() => {
+    this.http.get('/auth/logout', httpOptions).subscribe(() => {
       window.location.reload();
     });
   }
-
   private getDefault() {
     if (!localStorage.getItem('token')) {
-      this.http.get<UserLogin>(`${this.api}get`).subscribe(data => {
-        this.setToken(data);
-      });
+      this.http.get<UserLogin>('/api/get').subscribe(data => this.setToken(data));
     }
   }
   check(): Observable<any> {
@@ -56,23 +50,22 @@ export class AuthService {
       headers: new HttpHeaders(
         { 'Authorization': localStorage.getItem('token') })
     };
-    return this.http.get(`${this.api}check`, httpOptions);
+    return this.http.get('/api/check', httpOptions);
   }
-
   me(): Observable<UserApi> {
     this.getDefault();
     const httpOptions = {
       headers: new HttpHeaders(
         { 'Authorization': localStorage.getItem('token') })
     };
-    return this.http.get<UserApi>(`${this.api}me`, httpOptions);
+    return this.http.get<UserApi>('/api/me', httpOptions);
   }
   nav_items(): Observable<NavItem> {
     const httpOptions = {
       headers: new HttpHeaders(
         { 'Authorization': localStorage.getItem('token') })
     };
-    return this.http.get<NavItem>(`${this.api}nav_items`, httpOptions);
+    return this.http.get<NavItem>('/api/nav_items', httpOptions);
   }
 
 }

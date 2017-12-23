@@ -24,6 +24,7 @@ export class CategoriesComponent {
   getAll() {
     this.categoryService.getAll().subscribe(data => this.categories = data );
   }
+
   private checkAdmin() {
     this.authService.me().subscribe(data => {
       this.isAdmin = data.authorities.indexOf('admin') !== -1;
@@ -45,6 +46,10 @@ export class CategoriesComponent {
           this.snackBar.open('Successfully added!', 'Ok', {
             duration: 4000, verticalPosition: 'top'
           });
+        }, () => {
+          this.snackBar.open('Error with add new category!', 'Ok', {
+            duration: 4000, verticalPosition: 'top'
+          });
         });
       }
     });
@@ -64,6 +69,10 @@ export class CategoriesComponent {
         this.categoryService.edit(result.category).subscribe( data => {
           this.categories[index] = data;
           this.snackBar.open('Successfully changed!', 'Ok', {
+            duration: 4000, verticalPosition: 'top'
+          });
+        }, () => {
+          this.snackBar.open('Error with change category attributes', 'Ok', {
             duration: 4000, verticalPosition: 'top'
           });
         });

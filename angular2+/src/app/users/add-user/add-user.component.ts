@@ -11,14 +11,8 @@ export class AddUserComponent {
 
   authorities =
     [
-      {
-        name: 'Admin',
-        value: ['admin'],
-      },
-      {
-        name: 'Pretplatilac',
-        value: ['pretplatilac']
-      }
+      {name: 'Admin', value: ['admin']},
+      {name: 'Pretplatilac', value: ['pretplatilac']}
     ];
   categories = [];
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private categoryService: CategoryService) {

@@ -25,20 +25,16 @@ export class NavigationComponent {
   loginPage() {
     const dialogRef = this.dialog.open(LoginComponent, {
       panelClass: 'dialog-600x400',
-      data: {
-        user: new User()
-      }
+      data: { user: new User() }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.authService.loginPost(result.user)
-          .subscribe(data => {
+        this.authService.loginPost(result.user).subscribe(data => {
             this.authService.setToken(data);
             window.location.reload();
           }, () => {
             this.snackBar.open('Login data is not valid! Please login!', 'Login', {
-              duration: 4000,
-              verticalPosition: 'top'
+              duration: 4000, verticalPosition: 'top'
             }).onAction().subscribe(() => this.loginPage());
           });
       }
@@ -65,25 +61,20 @@ export class NavigationComponent {
     this.authService.nav_items().subscribe(data => {
       this.nav_items = data;
       this.authService.me().subscribe(user => this.me = user, () => {});
-    }, () => {
-      this.nav_items = [];
-    });
+    }, () => this.nav_items = []);
   }
 
   editProfile() {
     const dialogRef = this.dialog.open(EditUserComponent, {
       panelClass: 'dialog-600x600',
-      data: {
-        user: Object.assign({}, this.me)
-      }
+      data: { user: Object.assign({}, this.me) }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.userService.update(result.user).subscribe(data => {
           this.me = data;
           this.snackBar.open('Successfully changed!', 'Ok', {
-            duration: 4000,
-            verticalPosition: 'top'
+            duration: 4000, verticalPosition: 'top'
           });
           if (window.location.href.indexOf('users') !== -1) {
             window.location.reload();

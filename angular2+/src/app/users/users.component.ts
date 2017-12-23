@@ -67,6 +67,10 @@ export class UsersComponent implements OnInit {
             this.snackBar.open('Successfully added!', 'Ok', {
               duration: 4000, verticalPosition: 'top'
             });
+          }, () => {
+            this.snackBar.open(`Error, user with username: '${result.user.username}' can not be added`, 'Ok', {
+              duration: 4000, verticalPosition: 'top'
+            });
           });
         }
       });
@@ -84,6 +88,10 @@ export class UsersComponent implements OnInit {
         this.userService.update(result.user).subscribe(() => {
           this.getAll();
           this.snackBar.open('Successfully changed!', 'Ok', {
+            duration: 4000, verticalPosition: 'top'
+          });
+        }, () => {
+          this.snackBar.open(`Error, user with username ${result.user.username} is already exists`, 'Ok', {
             duration: 4000, verticalPosition: 'top'
           });
         });

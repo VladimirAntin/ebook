@@ -9,29 +9,7 @@ import { saveAs } from 'file-saver';
 })
 export class HomeComponent implements OnInit {
 
-  url;
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
-  ngOnInit() {
-  }
-
-  get() {
-    const httpOptions = {
-      headers: new HttpHeaders(
-        { 'Authorization': localStorage.getItem('token'),
-        'Accept': 'application/pdf'})
-    };
-    this.http.get('http://localhost:8080/files/Vezbe4.pdf', {headers: httpOptions.headers, responseType: 'blob'})
-      .subscribe(data => {
-          this.url = URL.createObjectURL(data);
-          // window.open(url, '_blank');
-          // saveAs(data);
-        }, err => {
-          console.log(err);
-        });
-  }
-
-  openlink(link) {
-    window.open(link, '_blank');
-  }
+  ngOnInit() { }
 }

@@ -30,7 +30,7 @@
             {{key}}
             <mat-icon matChipRemove>cancel</mat-icon>
           </mat-chip>
-          <input placeholder="new key"
+          <input placeholder="Keywords"
                  [matChipInputFor]="keywordList"
                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                  [matChipInputAddOnBlur]="true"
@@ -39,10 +39,32 @@
         <mat-hint align="end">{{ebook.keywords.length}}/120</mat-hint>
         <mat-hint>Please add keywords</mat-hint>
       </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Category" [(ngModel)]="ebook.category" required>
+          <mat-option *ngFor="let c of categories" [value]="c.id">
+            {{ c.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Language" [(ngModel)]="ebook.language" required>
+          <mat-option *ngFor="let l of languages" [value]="l.id">
+            {{ l.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </mat-step>
   </mat-horizontal-stepper>
 </mat-dialog-content>
 <mat-dialog-actions>
+  <button mat-button [disabled]="ebook.language<=0 ||
+    ebook.category<=0 || ebook.keywords==='' ||
+    ebook.title==='' || ebook.author==='' ||
+    ebook.publicationYear<=0" [mat-dialog-close]="{ok:true, ebook:ebook, file: file }" matTooltip="Add new Ebook">
+    <mat-icon>add</mat-icon>
+  </button>
   <span class="spacer"></span>
-  <button mat-button [mat-dialog-close]="false">Close</button>
+  <button mat-button [mat-dialog-close] matTooltip="Close">
+    <mat-icon>close</mat-icon>
+  </button>
 </mat-dialog-actions>

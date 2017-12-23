@@ -4,6 +4,9 @@ import {FileService} from '../../services/file.service';
 import {FormBuilder, Validators} from '@angular/forms';
 import {Ebook} from '../../model/ebook';
 import {ENTER, COMMA, SPACE} from '@angular/cdk/keycodes';
+import {EbookService} from '../../services/ebook.service';
+import {CategoryService} from '../../services/category.service';
+import {LanguageService} from '../../services/language.service';
 
 @Component({
   selector: 'app-add-ebook',
@@ -17,18 +20,19 @@ export class AddEbookComponent {
   separatorKeysCodes = [ENTER, COMMA, SPACE];
   ebook = new Ebook().empty();
   keywords = [];
+  categories = [];
+  languages = [];
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public snackBar: MatSnackBar,
-              private fileService: FileService, private formBuilder: FormBuilder) {
-    this.step1 = this.formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
+              private fileService: FileService, private ebookService: EbookService, private formBuilder: FormBuilder,
+              private categoryService: CategoryService, private languageService: LanguageService) {
+    this.step1 = this.formBuilder.group({firstCtrl: ['', Validators.required]});
+    this.getCategoriesAndLanguages();
   }
-
   fileChange(event) {
     const fileList: FileList = event.target.files;
     if (fileList.length === 1) {
       this.file = fileList[0];
-        this.fileService.checkUploadEbook(this.file).subscribe(data => {
+        this.ebookService.checkUploadEbook(this.file).subscribe(data => {
           this.ebook = data;
           if (this.ebook.title === null) {
             this.ebook.title = '';
@@ -41,12 +45,17 @@ export class AddEbookComponent {
           }else {
             this.keywords = this.ebook.keywords.split(', ');
           }
-        } );
+        });
     } else {
       this.snackBar.open('Only one file can be uploaded', 'Ok', {
         duration: 4000, verticalPosition: 'top'
       });
     }
+  }
+
+  getCategoriesAndLanguages() {
+    this.categoryService.getAll().subscribe(data => this.categories = data);
+    this.languageService.getAll().subscribe(data => this.languages = data);
   }
 
   addKey(event: MatChipInputEvent): void {

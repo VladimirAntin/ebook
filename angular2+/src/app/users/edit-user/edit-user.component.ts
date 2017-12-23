@@ -13,14 +13,8 @@ export class EditUserComponent {
 
   authorities =
     [
-      {
-        name: 'Admin',
-        value: ['admin'],
-      },
-      {
-        name: 'Pretplatilac',
-        value: ['pretplatilac']
-      }
+      {name: 'Admin', value: ['admin']},
+      {name: 'Pretplatilac', value: ['pretplatilac']}
     ];
   categories: CategoryOrLang[];
   isAdmin = false;

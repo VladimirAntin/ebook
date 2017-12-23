@@ -31,6 +31,7 @@ import { AddEditLangComponent } from './languages/add-edit-lang/add-edit-lang.co
 import { CategoryComponent } from './categories/category/category.component';
 import {FileService} from './services/file.service';
 import { AddEbookComponent } from './categories/add-ebook/add-ebook.component';
+import {EbookService} from "./services/ebook.service";
 
 enableProdMode();
 
@@ -57,7 +58,7 @@ enableProdMode();
   ],
   entryComponents: [ LoginComponent, AddUserComponent, EditUserComponent,
     AddEditCategoryComponent, AddEditLangComponent, AddEbookComponent ],
-  providers: [ AuthService, UserService, CategoryService, LanguageService, FileService ],
+  providers: [ AuthService, UserService, CategoryService, LanguageService, FileService, EbookService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

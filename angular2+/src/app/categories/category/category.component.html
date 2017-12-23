@@ -40,7 +40,7 @@
           <mat-icon>file_download</mat-icon>
         </button>
         <button mat-button color="accent" *ngIf="isAdmin"> Update </button>
-        <button mat-button color="warn" *ngIf="isAdmin"> Delete </button>
+        <button mat-button color="warn" *ngIf="isAdmin" (click)="delete(e)"> Delete </button>
         <p mat-line>Author: <b class="right">{{e.author}}</b></p>
         <p mat-line>Keywords: <b class="right">{{e.keywords}}</b></p>
         <p mat-line>Publication Year: <b class="right">{{e.publicationYear}}</b></p>

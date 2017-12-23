@@ -24,12 +24,16 @@ export class LanguagesComponent {
   getAll() {
     this.languageService.getAll().subscribe(data => {
       this.languages = data;
+    }, () => {
+      this.snackBar.open('Error with read languages!', 'Ok', {
+        duration: 4000, verticalPosition: 'top'
+      });
     });
   }
   private checkAdmin() {
     this.authService.me().subscribe(data => {
       this.isAdmin = data.authorities.indexOf('admin') !== -1;
-    });
+    }, () => {});
   }
 
   add() {
@@ -45,6 +49,10 @@ export class LanguagesComponent {
         this.languageService.add(result.lang).subscribe( data => {
           this.languages.push(data);
           this.snackBar.open('Successfully added!', 'Ok', {
+            duration: 4000, verticalPosition: 'top'
+          });
+        }, () => {
+          this.snackBar.open('Error with add new language', 'Ok', {
             duration: 4000, verticalPosition: 'top'
           });
         });
@@ -68,6 +76,10 @@ export class LanguagesComponent {
           this.snackBar.open('Successfully changed!', 'Ok', {
             duration: 4000, verticalPosition: 'top'
           });
+        }, () => {
+          this.snackBar.open('Error with change language attributes', 'Ok', {
+            duration: 4000, verticalPosition: 'top'
+          });
         });
       }
     });
@@ -79,7 +91,8 @@ export class LanguagesComponent {
       'Are you sure?', 'Yes', {
       duration: 10000, verticalPosition: 'top'
     }).onAction().subscribe(() => {
-      this.languageService.delete(lang).subscribe(() => this.languages.splice(index, 1));
+      this.languageService.delete(lang).subscribe(() => this.languages.splice(index, 1),
+        () => {});
     });
   }
 
