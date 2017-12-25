@@ -94,6 +94,7 @@ public class UserController {
             return new ResponseEntity(HttpStatus.FORBIDDEN);
         }else if(loginUser.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_ADMIN")) &&
                 !user.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_ADMIN"))){
+            user.setCategories(userDto.getCategories());
             if(userDto.getAuthorities().stream().anyMatch(a->a.equals("admin"))){
                 user = userService.saveAdmin(user);
             }else{

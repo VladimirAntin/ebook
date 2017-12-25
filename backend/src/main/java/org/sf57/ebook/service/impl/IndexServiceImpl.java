@@ -94,8 +94,9 @@ public class IndexServiceImpl implements IndexService{
         if(loginUser.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_ADMIN"))){
             return resultData;
         }else if(loginUser.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_PRETPLATILAC"))){
+            System.out.println("pretplatilac");
             for (ResultData rs:resultData) {
-                if(loginUser.getCategories().stream().anyMatch(c->c.getId()!=rs.getCategory())){
+                if(loginUser.getCategories().stream().allMatch(c->c.getId()!=rs.getCategory())){
                     rs.setLocation(null);
                 }
             }
@@ -112,7 +113,7 @@ public class IndexServiceImpl implements IndexService{
             return ebooks;
         }else if(loginUser.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_PRETPLATILAC"))){
             for (EbookDto ebook:ebooks) {
-                if(loginUser.getCategories().stream().anyMatch(c->c.getId()!=ebook.getCategory())){
+                if(loginUser.getCategories().stream().allMatch(c->c.getId()!=ebook.getCategory())){
                     ebook.setFilename(null);
                 }
             }
