@@ -22,4 +22,8 @@ INSERT INTO language(name) VALUES ('English');
 INSERT INTO language(name) VALUES ('Serbian');
 INSERT INTO language(name) VALUES ('German');
 
--- INSERT INTO ebook(mime,author,filename,keywords,publication_year,title,category_id,language_id,user_id) VALUES ('mime','autor','files/Vezbe4.pdf','key',2007,'title',2,1,2);
+-- INSERT INTO ebook(mime,author,filename,keywords,publication_year,title,category_id,language_id,user_id) VALUES ('application/pdf','Miki','files/Vakcina H1N1.pdf','vakcina, srbija',2009,'Vakcina H1N1',1,2,1);
+-- INSERT INTO ebook(mime,author,filename,keywords,publication_year,title,category_id,language_id,user_id) VALUES ('application/pdf','Miki','files/Prve vakcine danas u Srbiji.pdf','vakcine, srbija',2009,'Prve vakcine danas u Srbiji',1,2,1);
+-- INSERT INTO ebook(mime,author,filename,keywords,publication_year,title,category_id,language_id,user_id) VALUES ('application/pdf','Miki','files/Pandemija gripa.pdf','sumnja, pandemija, gripa',2009,'Pandemija gripa?',1,2,1);
+-- INSERT INTO ebook(mime,author,filename,keywords,publication_year,title,category_id,language_id,user_id) VALUES ('application/pdf','Miki','files/Otvorene dve deonicekoridora 10.pdf','autoput, koridor',2009,'Otvorene dve deonicekoridora 10',2,2,1);
+-- INSERT INTO ebook(mime,author,filename,keywords,publication_year,title,category_id,language_id,user_id) VALUES ('application/pdf','Miki - copy sa B92','files/Koridor 10 do kraja 2010.pdf','koridor, autoput',2009,'Koridor 10 do kraja 2010',2,2,1);

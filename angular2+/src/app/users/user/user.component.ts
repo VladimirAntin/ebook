@@ -23,8 +23,10 @@ export class UserComponent implements OnInit {
 
     this._router.events.filter((e) => e instanceof NavigationEnd)
       .subscribe((event: NavigationEnd) => {
-        this.id = event.urlAfterRedirects.split('/').pop();
-        this.get();
+        if (event.urlAfterRedirects.indexOf('users/') !== -1) {
+          this.id = event.urlAfterRedirects.split('/').pop();
+          this.get();
+        }
       });
   }
 

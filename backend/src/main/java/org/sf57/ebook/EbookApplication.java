@@ -27,11 +27,19 @@ public class EbookApplication {
 
     @PostConstruct
     public void init() {
-        Indexer.getInstance().index(new File(DATA_DIR_PATH));
+        File file = new File(DATA_DIR_PATH);
+        if(file.isDirectory()){
+            if(file.list().length==0){
+                Indexer.getInstance().index(file);
+            }
+        }
     }
     @PreDestroy
     public void destroy() throws Exception {
-        FileUtils.cleanDirectory(new File(index));
+        File file = new File(DATA_DIR_PATH);
+        if(file.list().length==0){
+            FileUtils.cleanDirectory(new File(index));
+        }
     }
 
 	@Bean

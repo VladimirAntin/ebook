@@ -1,16 +1,16 @@
 <h2 mat-dialog-title>Add new Ebook</h2>
 <mat-dialog-content>
   <mat-horizontal-stepper linear>
-    <mat-step [stepControl]="step1">
+    <mat-step>
       <ng-template matStepLabel>Upload file</ng-template>
-      <form [formGroup]="step1">
+      <form>
         <input type="file" (change)="fileChange($event)" placeholder="Upload"
-               accept=".pdf" formControlName="firstCtrl" required>
+               accept=".pdf" required>
       </form>
       <br>
-      <button mat-button matStepperNext>Next</button>
+      <button mat-button matStepperNext [disabled]="file===null">Next</button>
     </mat-step>
-    <mat-step>
+    <mat-step *ngIf="file!==null">
       <ng-template matStepLabel>Edit Ebook</ng-template>
       <mat-form-field class="full-width">
         <input matInput placeholder="Title" maxlength="80" [(ngModel)]="ebook.title" required>
@@ -21,7 +21,8 @@
         <mat-hint align="end">{{ebook.author.length}}/120</mat-hint>
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Publication Year" type="number" [(ngModel)]="ebook.publicationYear" required>
+        <input matInput placeholder="Publication Year" type="number" [(ngModel)]="ebook.publicationYear" required
+               style="margin-bottom: 0.5em">
       </mat-form-field>
       <mat-form-field class="full-width">
         <mat-chip-list #keywordList>
@@ -40,7 +41,8 @@
         <mat-hint>Please add keywords</mat-hint>
       </mat-form-field>
       <mat-form-field class="full-width">
-        <mat-select placeholder="Category" [(ngModel)]="ebook.category" required>
+        <mat-select placeholder="Category" [(ngModel)]="ebook.category" required
+                    style="margin-bottom: 0.5em">
           <mat-option *ngFor="let c of categories" [value]="c.id">
             {{ c.name}}
           </mat-option>

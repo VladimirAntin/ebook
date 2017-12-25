@@ -15,14 +15,13 @@ import {LanguageService} from '../../services/language.service';
 })
 export class AddEbookComponent {
 
-  step1; file: File = null;
+  file: File = null;
   separatorKeysCodes = [ENTER, COMMA, SPACE];
   ebook = new Ebook();
   keywords = []; categories = []; languages = [];
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public snackBar: MatSnackBar,
-              private fileService: FileService, private ebookService: EbookService, private formBuilder: FormBuilder,
+              private fileService: FileService, private ebookService: EbookService,
               private categoryService: CategoryService, private languageService: LanguageService) {
-    this.step1 = this.formBuilder.group({firstCtrl: ['', Validators.required]});
     this.getCategoriesAndLanguages();
   }
   fileChange(event) {

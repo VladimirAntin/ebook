@@ -10,7 +10,7 @@ import {
 } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {AuthService} from './services/auth.service';
 import { UsersComponent } from './users/users.component';
@@ -35,7 +35,7 @@ import { AddEbookComponent } from './categories/add-ebook/add-ebook.component';
 import {EbookService} from './services/ebook.service';
 import { EditEbookComponent } from './categories/edit-ebook/edit-ebook.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
-import {SearchService} from "./services/search.service";
+import {SearchService} from './services/search.service';
 
 enableProdMode();
 
@@ -52,7 +52,7 @@ enableProdMode();
     MatCheckboxModule, MatInputModule, MatToolbarModule, MatDialogModule,
     MatFormFieldModule, HttpClientModule, MatTableModule, MatPaginatorModule,
     MatIconModule, MatProgressSpinnerModule, MatTooltipModule, MatSelectModule,
-    MatSnackBarModule, MatChipsModule, MatListModule, MatStepperModule, ReactiveFormsModule
+    MatSnackBarModule, MatChipsModule, MatListModule, MatStepperModule
   ],
   exports: [
     MatButtonModule, MatCheckboxModule, MatInputModule, MatToolbarModule,
