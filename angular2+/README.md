@@ -2,4 +2,4 @@
 
 npm install
 
-ng start
+npm start

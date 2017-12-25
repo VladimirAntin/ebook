@@ -12,23 +12,23 @@ public class Ebook {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotNull
-    @Size(max = 80)
+    @Size(min = 1, max = 80)
     private String title;
     @NotNull
-    @Size(max = 120)
+    @Size(min = 1, max = 120)
     private String author;
     @NotNull
-    @Size(max = 120)
+    @Size(min = 1, max = 120)
     private String keywords;
     @Max(3000)
     @Min(1990)
     private int publicationYear;
     @NotNull
-    @Size(max = 200)
+    @Size(min = 1, max = 200)
     @Column(unique = true)
     private String filename;
     @NotNull
-    @Size(max = 100)
+    @Size(min = 1, max = 100)
     private String MIME;
     @NotNull
     @ManyToOne

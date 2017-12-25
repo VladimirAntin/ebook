@@ -1,3 +1,43 @@
-<div>
-  home
+<div class="center f20">
+  <mat-slide-toggle color="accent"
+    [checked]="boolquery" (change)="changeQuery(boolquery)">
+    {{boolquery? 'Boolean Query' : 'Standard Query'}}
+  </mat-slide-toggle>
+  <br>
+  <div *ngIf="!boolquery">
+    <mat-form-field>
+      <mat-select placeholder="Field" [(ngModel)]="query.field">
+        <mat-option *ngFor="let f of fields" [value]="f">{{f | uppercase}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="w30">
+      <input matInput type="text" placeholder="Search" [(ngModel)]="query.value">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Query" [(ngModel)]="query.numQ">
+        <mat-option *ngFor="let q of queries; let i=index" [value]="i">{{q}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <button mat-fab color="primary" (click)="search()" [disabled]="query.value===''">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="boolquery"></div>
+</div>
+<div *ngIf="result.length!==0" >
+  <mat-list>
+    <mat-list-item *ngFor="let r of result" class="add-border">
+      <p mat-line><b>{{r.title}}</b></p>
+      <p mat-line><i>{{r.keywords}}</i></p>
+      <p mat-line [innerHTML]="r.highlight"></p>
+      <button mat-button color="primary" (click)="openPdf(r.href)" matTooltip="Open in new tab" *ngIf="r.location">
+        <mat-icon>open_in_new</mat-icon>
+      </button>
+      <button mat-button color="primary" (click)="download(r.location)" matTooltip="Download file" *ngIf="r.location">
+        <mat-icon>file_download</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+
 </div>

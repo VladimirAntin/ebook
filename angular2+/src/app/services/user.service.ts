@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {UserApi} from '../model/user-api';
+import {UserPassword} from '../model/user-password';
 
 @Injectable()
 export class UserService {
@@ -32,5 +33,8 @@ export class UserService {
   }
   update(user: UserApi) {
     return this.http.put<UserApi>(`${this.users}${user.id}`, user, this.httpOptions);
+  }
+  changePassword(id: number, user: UserPassword) {
+    return this.http.patch(`${this.users}${id}/password`, user, this.httpOptions);
   }
 }

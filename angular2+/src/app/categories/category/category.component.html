@@ -39,12 +39,11 @@
         <button mat-button color="primary" (click)="download(e.filename)" matTooltip="Download file" *ngIf="e.filename">
           <mat-icon>file_download</mat-icon>
         </button>
-        <button mat-button color="accent" *ngIf="isAdmin"> Update </button>
+        <button mat-button color="accent" *ngIf="isAdmin" (click)="edit(e)"> Update </button>
         <button mat-button color="warn" *ngIf="isAdmin" (click)="delete(e)"> Delete </button>
         <p mat-line>Author: <b class="right">{{e.author}}</b></p>
         <p mat-line>Keywords: <b class="right">{{e.keywords}}</b></p>
         <p mat-line>Publication Year: <b class="right">{{e.publicationYear}}</b></p>
-        <p mat-line>MIME: <b class="right">{{e.mime}}</b></p>
       </mat-list-item>
     </mat-list>
   </div>

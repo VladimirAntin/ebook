@@ -40,6 +40,7 @@ public class IndexServiceImpl implements IndexService{
             pd.getDocumentInformation().setTitle(ebook.getTitle());
             pd.getDocumentInformation().setAuthor(ebook.getAuthor());
             pd.getDocumentInformation().setKeywords(ebook.getKeywords());
+            pd.setDocumentId(ebook.getId());
 
             doc.add(new TextField("title", ebook.getTitle(), Field.Store.YES));
             doc.add(new TextField("filename", ebook.getFilename(), Field.Store.YES));
@@ -49,6 +50,7 @@ public class IndexServiceImpl implements IndexService{
             doc.add(new TextField("category",String.valueOf(ebook.getCategory().getId()), Field.Store.YES));
             doc.add(new TextField("keyword", ebook.getKeywords(), Field.Store.YES));
             doc.add(new TextField("language", ebook.getLanguage().getName(), Field.Store.YES));
+            doc.add(new TextField("id", String.valueOf(ebook.getId()), Field.Store.YES));
         } catch (IOException e) {
         }finally {
             try {

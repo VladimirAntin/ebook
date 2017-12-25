@@ -7,6 +7,7 @@ import {FileService} from '../../services/file.service';
 import {AuthService} from '../../services/auth.service';
 import {AddEbookComponent} from '../add-ebook/add-ebook.component';
 import {EbookService} from '../../services/ebook.service';
+import {EditEbookComponent} from "../edit-ebook/edit-ebook.component";
 
 @Component({
   selector: 'app-category',
@@ -15,12 +16,9 @@ import {EbookService} from '../../services/ebook.service';
 })
 export class CategoryComponent implements OnInit {
 
-  filterEbook;
-  filterUser;
-  id;
+  filterEbook; filterUser; id;
   category = new CategoryOrLang();
-  ebooks = [];
-  usersList = [];
+  ebooks = []; usersList = [];
   isAdmin = false;
   constructor(private route: ActivatedRoute, private categoryService: CategoryService,
               private fileService: FileService, private authService: AuthService,
@@ -60,14 +58,38 @@ export class CategoryComponent implements OnInit {
       panelClass: 'dialog-600x800'
     });
     dialogRef.afterClosed().subscribe(result => {
-      if (result.ok === true) {
-        this.ebookService.addEbook(result.file, result.ebook).subscribe(() => {
+      if (result) {
+        this.ebookService.add(result.file, result.ebook).subscribe(() => {
           this.getEbooks();
           this.snackBar.open('Success, new book is added', 'OK', {
             duration: 4000, verticalPosition: 'top'
           });
         }, () => {
           this.snackBar.open('Error, ebook is not added', 'OK', {
+            duration: 4000, verticalPosition: 'top'
+          });
+        });
+      }
+    });
+  }
+
+  edit(ebook) {
+    const dialogRef = this.dialog.open(EditEbookComponent, {
+      panelClass: 'dialog-600x600',
+      data: {
+        ebook: Object.assign({}, ebook)
+      }
+    });
+    const index = this.ebooks.indexOf(ebook);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.ebookService.edit(result.ebook).subscribe(data => {
+          this.ebooks[index] = data;
+          this.snackBar.open('Success, ebook is changed!', 'OK', {
+            duration: 4000, verticalPosition: 'top'
+          });
+        }, () => {
+          this.snackBar.open('Error, ebook is not changed!', 'OK', {
             duration: 4000, verticalPosition: 'top'
           });
         });

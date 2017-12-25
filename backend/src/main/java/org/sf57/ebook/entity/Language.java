@@ -13,7 +13,7 @@ public class Language {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotNull
-    @Size(max = 30)
+    @Size(min = 1,max = 30)
     private String name;
     @JsonIgnore
     @OneToMany(mappedBy = "language", cascade = CascadeType.ALL)

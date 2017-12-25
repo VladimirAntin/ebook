@@ -9,7 +9,7 @@ export class UserApi {
   authorities: string[];
   categories: CategoryOrLang[];
 
-  public empty() {
+  constructor() {
     this.id = 0;
     this.firstName = '';
     this.lastName = '';

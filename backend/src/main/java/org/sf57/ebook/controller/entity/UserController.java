@@ -3,12 +3,14 @@ package org.sf57.ebook.controller.entity;
 import org.sf57.ebook.converter.UserDtoToUser;
 import org.sf57.ebook.converter.UserToUserDto;
 import org.sf57.ebook.dto.UserDto;
+import org.sf57.ebook.dto.UserPasswordDto;
 import org.sf57.ebook.entity.User;
 import org.sf57.ebook.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -68,9 +70,6 @@ public class UserController {
         if(dto.getAuthorities().stream().anyMatch(a->a.equals("admin"))){
             user = userService.saveAdmin(toUser.convert(dto));
         }else{
-//            if(dto.getCategories()==null || dto.getCategories().isEmpty()){
-//                return new ResponseEntity(HttpStatus.CONFLICT);
-//            }
             user = userService.savePretplatilac(toUser.convert(dto));
         }
         return ResponseEntity.ok(toDto.convert(user));
@@ -105,14 +104,25 @@ public class UserController {
         }
         return ResponseEntity.ok(toDto.convert(user));
     }
-    @PutMapping("/{id}/password")
+    @PatchMapping("/{id}/password")
     @PreAuthorize("hasAnyRole('ADMIN','PRETPLATILAC')")
-    public ResponseEntity password(@PathVariable long id, @RequestBody UserDto dto, Principal principal){
-        if(userService.findByUsername(principal.getName()).getId()!=id){
+    public ResponseEntity password(@PathVariable long id, @RequestBody @Validated UserPasswordDto dto, Principal principal){
+        User user = userService.findByUsername(principal.getName());
+        if(user.getId()!=id){
             return new ResponseEntity(HttpStatus.FORBIDDEN);
         }
-        User user = userService.changePassword(id,dto.getPassword());
-        return ResponseEntity.ok(toDto.convert(user));
+        if(!dto.getNewPasswordRepeat().equals(dto.getNewPasswordRepeat())){
+            return ResponseEntity.badRequest().build();
+        }
+        if(!new BCryptPasswordEncoder().matches(dto.getOldPassword(),user.getPassword())){
+            return ResponseEntity.badRequest().build();
+        }
+        user = userService.changePassword(id,dto.getNewPassword());
+        if(user!=null){
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.badRequest().build();
+
     }
 
     @DeleteMapping("/{id}")

@@ -11,6 +11,7 @@ import org.sf57.ebook.service.EbookService;
 import org.sf57.ebook.service.IndexService;
 import org.sf57.ebook.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -117,7 +118,7 @@ public class EbookController {
             String filename = ebook.getFilename().substring(6); //without files/
             File newfile = storageService.load(filename).toFile();
             Document doc = indexService.indexFile(newfile, ebook);
-            Indexer.getInstance().updateDocument(ebook.getFilename(),doc);
+            Indexer.getInstance().updateDocument(ebook,doc);
             return ResponseEntity.ok(toDto.convert(ebook));
         }
         return new ResponseEntity(HttpStatus.CONFLICT);
@@ -131,7 +132,7 @@ public class EbookController {
             return ResponseEntity.notFound().build();
         }
 //      String filename = ebook.getFilename().substring(6); //without files/
-        if(Indexer.getInstance().delete(ebook.getFilename())){
+        if(Indexer.getInstance().delete(ebook)){
             storageService.delete(ebook.getFilename());
         }
         ebookService.delete(id);

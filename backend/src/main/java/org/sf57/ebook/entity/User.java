@@ -19,14 +19,14 @@ public class User implements UserDetails{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotNull
-    @Size(max = 30)
+    @Size(min = 1,max = 30)
     private String firstName;
     @NotNull
-    @Size(max = 30)
+    @Size(min = 1,max = 30)
     private String lastName;
     @Column(unique = true)
     @NotNull
-    @Size(max = 30)
+    @Size(min = 1,max = 30)
     private String username;
     @NotNull
     @Size(max = 256)

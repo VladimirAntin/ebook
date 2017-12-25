@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 import {UserService} from '../../services/user.service';
 import {UserApi} from '../../model/user-api';
-import { AuthService } from '../../services/auth.service';
+import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'app-user',
@@ -13,13 +13,19 @@ export class UserComponent implements OnInit {
   id;
   user = new UserApi();
   isAdmin = false;
-  constructor(private route: ActivatedRoute, private userService: UserService) {}
+  constructor(private route: ActivatedRoute, private userService: UserService, private _router: Router) {}
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
     if ( isNaN(this.id) ) {
       this.id = this.route.snapshot.paramMap.get('id');
     }
     this.get();
+
+    this._router.events.filter((e) => e instanceof NavigationEnd)
+      .subscribe((event: NavigationEnd) => {
+        this.id = event.urlAfterRedirects.split('/').pop();
+        this.get();
+      });
   }
 
   private get() {

@@ -73,6 +73,10 @@ public class ResultRetriever {
 				keywords = keywords.trim();
 				String title = doc.get("title");
 				String location = "files/"+Paths.get(doc.get("filename")).getFileName().toString();
+                File file = new File(location);
+                if(!file.exists()){
+                    continue;
+                }
 				String highlight = "";
 				for (RequiredHighlight rh : requiredHighlights) {
 					hl = new Highlighter(new QueryScorer(query, reader, rh.getFieldName()));
@@ -96,7 +100,7 @@ public class ResultRetriever {
 		} catch (IOException e) {
 			throw new IllegalArgumentException(
 					"U prosledjenom direktorijumu ne postoje indeksi ili je direktorijum zakljucan");
-		} 
+		}
 	}
 
 	private static String getDocumentText(String location){

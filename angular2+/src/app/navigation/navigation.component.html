@@ -9,9 +9,12 @@
     <button *ngFor="let nav of nav_items" mat-button color="primary" [routerLink]="[nav.route]">
       {{nav.name}}
     </button>
-    <a mat-button *ngIf="login" color="primary" href="{{'users/'+me.username}}">Profile</a>
+    <button mat-button color="primary" [routerLink]="['users/', me.username]">
+      profile
+    </button>
+    <!--<a mat-button *ngIf="login" color="primary" href="{{'users/'+me.username}}">Profile</a>-->
     <span class="spacer"></span>
-    <button mat-button *ngIf="login" color="primary">Change password</button>
+    <button mat-button *ngIf="login" color="primary" (click)="changePassword()">Change password</button>
     <button mat-button *ngIf="login" color="primary" (click)="editProfile()">Edit profile</button>
     <button mat-button *ngIf="!login" (click)="loginPage()">Login</button>
     <button mat-button *ngIf="login" (click)="logout()">Logout</button>

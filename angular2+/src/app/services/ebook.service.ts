@@ -19,7 +19,7 @@ export class EbookService {
     formData.append('file', file);
     return this.http.post<Ebook>(`${this.ebooks}upload`, formData, this.httpOptions);
   }
-  addEbook(file: File, ebook: Ebook): Observable<Ebook> {
+  add(file: File, ebook: Ebook): Observable<Ebook> {
     const formData: FormData = new FormData();
     formData.append('file', file);
     formData.append('title', ebook.title);
@@ -35,4 +35,7 @@ export class EbookService {
     return this.http.delete<Ebook>(`${this.ebooks}${id}`, this.httpOptions);
   }
 
+  edit(ebook: Ebook): Observable<Ebook> {
+    return this.http.put<Ebook>(`${this.ebooks}${ebook.id}`, ebook, this.httpOptions);
+  }
 }

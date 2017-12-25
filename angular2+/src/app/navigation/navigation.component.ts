@@ -6,6 +6,9 @@ import {UserApi} from '../model/user-api';
 import {User} from '../model/user';
 import {EditUserComponent} from '../users/edit-user/edit-user.component';
 import {UserService} from '../services/user.service';
+import {NavItem} from '../model/nav-item';
+import {ChangePasswordComponent} from "../change-password/change-password.component";
+import {UserPassword} from "../model/user-password";
 
 @Component({
   selector: 'app-navigation',
@@ -14,8 +17,7 @@ import {UserService} from '../services/user.service';
 })
 export class NavigationComponent {
 
-  nav_items;
-  login: boolean;
+  nav_items: NavItem[]; login: boolean;
   me = new UserApi();
   constructor(public dialog: MatDialog, private authService: AuthService,
               private userService: UserService, public snackBar: MatSnackBar) {
@@ -83,4 +85,24 @@ export class NavigationComponent {
       }
     });
   }
+  changePassword() {
+    const dialogRef = this.dialog.open(ChangePasswordComponent, {
+      panelClass: 'dialog-600x400',
+      data: { user: new UserPassword() }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.userService.changePassword(this.me.id, result.user).subscribe(() => {
+          this.snackBar.open('Successfully changed!', 'Ok', {
+            duration: 4000, verticalPosition: 'top'
+          });
+        }, () => {
+          this.snackBar.open('Error with change password!', 'Ok', {
+            duration: 4000, verticalPosition: 'top'
+          });
+        });
+      }
+    });
+  }
+
 }

@@ -39,13 +39,13 @@ public class UserDtoToUser implements Converter<UserDto,User>{
     public User convert(long id,UserDto dto) {
         User user = userService.findOne(id);
         if(dto.getFirstName()!=null && !dto.getFirstName().trim().equals("")){
-            user.setFirstName(dto.getFirstName());
+            user.setFirstName(dto.getFirstName().trim());
         }
         if(dto.getLastName()!=null && !dto.getLastName().trim().equals("")){
-            user.setLastName(dto.getLastName());
+            user.setLastName(dto.getLastName().trim());
         }
         if(dto.getUsername()!=null && !dto.getUsername().trim().equals("")){
-            user.setUsername(dto.getUsername());
+            user.setUsername(dto.getUsername().trim());
         }
         if(dto.getPassword()!=null && !dto.getPassword().trim().equals("")){
             user.setPassword(new BCryptPasswordEncoder().encode(dto.getPassword()));

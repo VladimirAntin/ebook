@@ -6,7 +6,8 @@ import {
   MatButtonModule, MatCheckboxModule, MatToolbarModule,
   MatDialogModule, MatInputModule, MatFormFieldModule, MatTableModule, MatPaginatorModule, MatIconModule,
   MatProgressSpinnerModule, MatTooltipModule, MatSelectModule, MatSnackBarModule, MatChipsModule, MatListModule,
-  MatStepperModule } from '@angular/material';
+  MatStepperModule, MatSlideToggleModule
+} from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -31,7 +32,10 @@ import { AddEditLangComponent } from './languages/add-edit-lang/add-edit-lang.co
 import { CategoryComponent } from './categories/category/category.component';
 import {FileService} from './services/file.service';
 import { AddEbookComponent } from './categories/add-ebook/add-ebook.component';
-import {EbookService} from "./services/ebook.service";
+import {EbookService} from './services/ebook.service';
+import { EditEbookComponent } from './categories/edit-ebook/edit-ebook.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import {SearchService} from "./services/search.service";
 
 enableProdMode();
 
@@ -40,11 +44,11 @@ enableProdMode();
     AppComponent, HomeComponent, LoginComponent, UsersComponent,
     AddUserComponent, UserComponent, NavigationComponent, EditUserComponent, NotFoundComponent,
     CategoriesComponent, AddEditCategoryComponent, SearchPipe, LanguagesComponent, AddEditLangComponent,
-    CategoryComponent, AddEbookComponent
+    CategoryComponent, AddEbookComponent, EditEbookComponent, ChangePasswordComponent
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule,
+    BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatSlideToggleModule,
     MatCheckboxModule, MatInputModule, MatToolbarModule, MatDialogModule,
     MatFormFieldModule, HttpClientModule, MatTableModule, MatPaginatorModule,
     MatIconModule, MatProgressSpinnerModule, MatTooltipModule, MatSelectModule,
@@ -54,11 +58,12 @@ enableProdMode();
     MatButtonModule, MatCheckboxModule, MatInputModule, MatToolbarModule,
     MatDialogModule, MatFormFieldModule, MatTableModule, MatPaginatorModule,
     MatIconModule, MatProgressSpinnerModule, MatTooltipModule, MatSelectModule,
-    MatSnackBarModule, MatChipsModule, MatListModule, MatStepperModule
+    MatSnackBarModule, MatChipsModule, MatListModule, MatStepperModule, MatSlideToggleModule
   ],
-  entryComponents: [ LoginComponent, AddUserComponent, EditUserComponent,
-    AddEditCategoryComponent, AddEditLangComponent, AddEbookComponent ],
-  providers: [ AuthService, UserService, CategoryService, LanguageService, FileService, EbookService ],
+  entryComponents: [ LoginComponent, AddUserComponent, EditUserComponent, ChangePasswordComponent,
+    AddEditCategoryComponent, AddEditLangComponent, AddEbookComponent, EditEbookComponent ],
+  providers: [ AuthService, UserService, CategoryService, LanguageService, FileService,
+    EbookService, SearchService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

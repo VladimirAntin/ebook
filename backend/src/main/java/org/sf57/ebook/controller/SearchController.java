@@ -4,11 +4,9 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.Query;
-import org.sf57.ebook.lucene.indexing.analysers.SerbianAnalyzer;
 import org.sf57.ebook.lucene.model.*;
 import org.sf57.ebook.lucene.search.QueryBuilder;
 import org.sf57.ebook.lucene.search.ResultRetriever;
@@ -31,15 +29,10 @@ public class SearchController {
     @PostMapping(value="/search", consumes="application/json")
     public ResponseEntity searchall(@RequestBody SimpleQuery simpleQuery, Principal principal) throws Exception{
         Query query;
-        if(simpleQuery.getNumQ()==1){
-            query= QueryBuilder.buildQuery(SearchType.fuzzy, simpleQuery.getField(), simpleQuery.getValue());
-        }else if(simpleQuery.getNumQ()==2){
-            query= QueryBuilder.buildQuery(SearchType.prefix, simpleQuery.getField(), simpleQuery.getValue());
-        }else if(simpleQuery.getNumQ()==3){
-            query= QueryBuilder.buildQuery(SearchType.range, simpleQuery.getField(), simpleQuery.getValue());
-        }else if(simpleQuery.getNumQ()==4){
-            query= QueryBuilder.buildQuery(SearchType.phrase, simpleQuery.getField(), simpleQuery.getValue());
-        }else{
+        try{
+            SearchType st = SearchType.values()[simpleQuery.getNumQ()];
+            query= QueryBuilder.buildQuery(st, simpleQuery.getField(), simpleQuery.getValue());
+        } catch (ArrayIndexOutOfBoundsException e){
             query= QueryBuilder.buildQuery(SearchType.regular, simpleQuery.getField(), simpleQuery.getValue());
         }
         List<RequiredHighlight> rh = new ArrayList<RequiredHighlight>();

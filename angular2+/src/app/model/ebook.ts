@@ -11,7 +11,7 @@ export class Ebook {
   language: number;
   user: string;
 
-  empty() {
+  constructor() {
     this.title = '';
     this.author = '';
     this.keywords = '';

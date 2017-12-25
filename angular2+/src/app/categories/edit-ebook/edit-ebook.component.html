@@ -1,0 +1,57 @@
+<h2 mat-dialog-title> Edit ebook</h2>
+<mat-dialog-content>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Title" maxlength="80" [(ngModel)]="data.ebook.title" required>
+    <mat-hint align="end">{{data.ebook.title.length}}/80</mat-hint>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Author" maxlength="120" [(ngModel)]="data.ebook.author" required>
+    <mat-hint align="end">{{data.ebook.author.length}}/120</mat-hint>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Publication Year" type="number" [(ngModel)]="data.ebook.publicationYear" required>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-chip-list #keywordList>
+      <mat-chip *ngFor="let key of keywords"
+                [removable]="true" (remove)="removeKey(key)">
+        {{key}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="Keywords"
+             [matChipInputFor]="keywordList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="true"
+             (matChipInputTokenEnd)="addKey($event)" />
+    </mat-chip-list>
+    <mat-hint align="end">{{data.ebook.keywords.length}}/120</mat-hint>
+    <mat-hint>Please add keywords</mat-hint>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-select placeholder="Category" [(ngModel)]="data.ebook.category" required>
+      <mat-option *ngFor="let c of categories" [value]="c.id">
+        {{ c.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-select placeholder="Language" [(ngModel)]="data.ebook.language" required>
+      <mat-option *ngFor="let l of languages" [value]="l.id">
+        {{ l.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-icon-button [mat-dialog-close]="{ebook:data.ebook}"
+          color="primary" matTooltip="Edit ebook" [disabled]="data.ebook.language<=0 ||
+    data.ebook.category<=0 || data.ebook.keywords==='' ||
+    data.ebook.title==='' || data.ebook.author==='' ||
+    data.ebook.publicationYear<=0">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <button mat-icon-button mat-dialog-close matTooltip="Close">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-dialog-actions>

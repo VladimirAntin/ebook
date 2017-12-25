@@ -11,6 +11,7 @@ import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.SimpleFSDirectory;
 
+import org.sf57.ebook.entity.Ebook;
 import org.sf57.ebook.lucene.indexing.analysers.SerbianAnalyzer;
 import org.sf57.ebook.lucene.indexing.handlers.*;
 
@@ -18,53 +19,42 @@ public class Indexer {
 	
 	private IndexWriter indexWriter;
 	private Directory indexDir;
+	private String indexPath;
 
-	private static Indexer indexer = new Indexer(true);
+
+	private static Indexer indexer = new Indexer();
 	
 	public static Indexer getInstance(){
 		return indexer;
 	}
 	
-	private Indexer(String path, boolean restart) {
-//		System.out.println("PATH: " + path);
+	private Indexer() {
+        indexPath = ResourceBundle.getBundle("application").getString("index");
 		IndexWriterConfig iwc = new IndexWriterConfig(new SerbianAnalyzer());
-		if(restart){
-			iwc.setOpenMode(OpenMode.CREATE);
-		}else{
-			iwc.setOpenMode(OpenMode.CREATE);
-		}
-		
+        iwc.setOpenMode(OpenMode.CREATE);
+
 		try{
-			this.indexDir = new SimpleFSDirectory(FileSystems.getDefault().getPath(path));
+			this.indexDir = new SimpleFSDirectory(FileSystems.getDefault().getPath(indexPath));
 			this.indexWriter = new IndexWriter(this.indexDir, iwc);
 		}catch(IOException ioe){
 			throw new IllegalArgumentException("Path not correct");
 		}
 	}
 	
-	private Indexer(boolean restart){
-		this(ResourceBundle.getBundle("application").getString("index"), restart);
-	}
-	
 	public IndexWriter getIndexWriter(){
 		return this.indexWriter;
 	}
-	
-	public Directory getIndexDir(){
-		return indexDir;
-	}
-	
-	public boolean delete(String filename){
-		Term delTerm = new Term("filename", filename);
-		try {
-			synchronized (this) {
-				this.indexWriter.deleteDocuments(delTerm);
-				this.indexWriter.commit();
-			}
-			return true;
-		} catch (IOException e) {
-			return false;
-		}
+
+	public boolean delete(Ebook ebook){
+        try {
+            synchronized (this){
+                this.indexWriter.deleteDocuments(new Term("id", String.valueOf(ebook.getId())));
+                this.indexWriter.commit();
+            }
+            return true;
+        } catch (IOException e) {
+        }
+        return false;
 	}
 	
 	public boolean add(Document doc){
@@ -78,18 +68,16 @@ public class Indexer {
 			return false;
 		}
 	}
-	public boolean updateDocument(String filename, Document doc){
-
-		try{
-			synchronized (this) {
-				this.indexWriter.updateDocument(new Term("filename", filename), doc);
-				this.indexWriter.commit();
-				return true;
-			}
-		}catch(IOException e){
-		}
-
-		return false;
+	public boolean updateDocument(Ebook ebook,Document doc){
+        try {
+            synchronized (this){
+                this.indexWriter.updateDocument(new Term("id", String.valueOf(ebook.getId())), doc);
+                this.indexWriter.commit();
+            }
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
 	}
 
 	public int index(File file){
@@ -123,7 +111,7 @@ public class Indexer {
 		}
 		return this.indexWriter.numDocs();
 	}
-	
+
 	protected void finalize() throws Throwable {
 		this.indexWriter.close();
 	}

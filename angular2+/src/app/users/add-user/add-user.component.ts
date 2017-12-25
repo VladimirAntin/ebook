@@ -16,7 +16,7 @@ export class AddUserComponent {
     ];
   categories = [];
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private categoryService: CategoryService) {
-    this.data.user.empty();
+    // this.data.user.empty();
     this.data.user.authorities = this.authorities[1].value;
     this.getAllCategories();
   }

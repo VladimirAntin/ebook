@@ -55,21 +55,21 @@ public class EbookDtoToEbook implements Converter<EbookDto,Ebook>{
     public Ebook convert(long id,EbookDto ebookDto) {
         Ebook ebook = ebookService.findOne(id);
         if(ebookDto.getTitle()!=null){
-            ebook.setTitle(ebookDto.getTitle());
+            ebook.setTitle(ebookDto.getTitle().trim());
         }
         if(ebookDto.getAuthor()!=null){
-            ebook.setAuthor(ebookDto.getAuthor());
+            ebook.setAuthor(ebookDto.getAuthor().trim());
         }
         if(ebookDto.getKeywords()!=null){
-            ebook.setKeywords(ebookDto.getKeywords());
+            ebook.setKeywords(ebookDto.getKeywords().trim());
         }
         if(ebookDto.getPublicationYear()!=0){
             ebook.setPublicationYear(ebookDto.getPublicationYear());
         }
-        User user = userService.findByUsername(ebookDto.getUser());
-        if(user!=null){
-            ebook.setUser(user);
-        }
+//        User user = userService.findByUsername(ebookDto.getUser());
+//        if(user!=null){
+//            ebook.setUser(user);
+//        }
         Language lang = langService.findOne(ebookDto.getLanguage());
         if(lang!=null){
             ebook.setLanguage(lang);

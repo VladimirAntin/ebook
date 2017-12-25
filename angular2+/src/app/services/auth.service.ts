@@ -36,8 +36,8 @@ export class AuthService {
         { 'Authorization': token })
     };
     this.http.get('/auth/logout', httpOptions).subscribe(() => {
-      window.location.reload();
-    });
+      setTimeout(() => window.location.reload(), 1000);
+    }, () => {});
   }
   private getDefault() {
     if (!localStorage.getItem('token')) {
@@ -60,12 +60,12 @@ export class AuthService {
     };
     return this.http.get<UserApi>('/api/me', httpOptions);
   }
-  nav_items(): Observable<NavItem> {
+  nav_items(): Observable<NavItem[]> {
     const httpOptions = {
       headers: new HttpHeaders(
         { 'Authorization': localStorage.getItem('token') })
     };
-    return this.http.get<NavItem>('/api/nav_items', httpOptions);
+    return this.http.get<NavItem[]>('/api/nav_items', httpOptions);
   }
 
 }
