@@ -1,10 +1,10 @@
 <div class="center f20">
-  <mat-slide-toggle color="accent"
-    [checked]="boolquery" (change)="changeQuery(boolquery)">
-    {{boolquery? 'Boolean Query' : 'Standard Query'}}
+  <mat-slide-toggle color="accent" id="bool_button"
+                    [checked]="queryType" (change)="changeQueryType(queryType)">
+    {{queryType? 'Boolean Query' : 'Standard Query'}}
   </mat-slide-toggle>
   <br>
-  <div *ngIf="!boolquery">
+  <div *ngIf="!queryType">
     <mat-form-field>
       <mat-select placeholder="Field" [(ngModel)]="query.field">
         <mat-option *ngFor="let f of fields" [value]="f">{{f | uppercase}}</mat-option>
@@ -23,11 +23,37 @@
       <mat-icon>search</mat-icon>
     </button>
   </div>
-  <div *ngIf="boolquery"></div>
+  <div *ngIf="queryType">
+    <div *ngFor="let b of boolQuery.queries">
+      <mat-form-field>
+        <mat-select placeholder="Field" [(ngModel)]="b.field">
+          <mat-option *ngFor="let f of fields" [value]="f">{{f | uppercase}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="w30">
+        <input matInput type="text" placeholder="Search" [(ngModel)]="b.value">
+      </mat-form-field>
+      <button mat-mini-fab color="primary" matTooltip="Add new Field" (click)="addField()"
+              [disabled]="boolQuery.queries.length >= 15">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-mini-fab color="warn" matTooltip="Remove field" (click)="removeField(b)"
+              [disabled]="boolQuery.queries.length == 1">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+    <mat-slide-toggle color="accent"
+                      [checked]="must" (change)="changeQuery(must)">
+      {{must? 'Must' : 'Should'}}
+    </mat-slide-toggle>
+    <button mat-fab color="primary" [disabled]="isValidBool()" (click)="search(true)">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
 </div>
 <div *ngIf="result.length!==0" >
   <mat-list>
-    <mat-list-item *ngFor="let r of result" class="add-border">
+    <mat-list-item *ngFor="let r of result" class="content">
       <p mat-line><b>{{r.title}}</b></p>
       <p mat-line><i>{{r.keywords}}</i></p>
       <p mat-line [innerHTML]="r.highlight"></p>
@@ -37,7 +63,7 @@
       <button mat-button color="primary" (click)="download(r.location)" matTooltip="Download file" *ngIf="r.location">
         <mat-icon>file_download</mat-icon>
       </button>
+      <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
-
 </div>

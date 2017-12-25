@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Query} from '../model/query';
 import {Observable} from 'rxjs/Observable';
 import {ResultData} from '../model/result-data';
+import {BoolQuery} from "../model/bool-query";
 
 @Injectable()
 export class SearchService {
@@ -14,5 +15,8 @@ export class SearchService {
 
   search(query: Query): Observable<ResultData[]> {
     return this.http.post<ResultData[]>('/search', query, this.httpOptions);
+  }
+  searchBool(boolQuery: BoolQuery): Observable<ResultData[]> {
+    return this.http.post<ResultData[]>('/searchb', boolQuery, this.httpOptions);
   }
 }
