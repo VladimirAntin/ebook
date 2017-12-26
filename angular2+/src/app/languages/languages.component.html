@@ -1,6 +1,7 @@
 <div *ngIf="isAdmin">
   <div style="padding: 8px 24px 0">
     <mat-form-field class="full-width f20">
+      <mat-icon matPrefix>search</mat-icon>
       <input matInput placeholder="Filter" [(ngModel)]="filter">
     </mat-form-field>
     <mat-toolbar>
@@ -15,10 +16,14 @@
   </div>
   <mat-list>
     <mat-list-item *ngFor="let l of languages | search:'name':filter">
-      <mat-icon mat-list-icon>web_asset</mat-icon>
+      <mat-icon mat-list-icon>language</mat-icon>
       <h4 mat-line>{{l.name}}</h4>
-      <button mat-button color="accent" *ngIf="isAdmin" (click)="edit(l)"> Update </button>
-      <button mat-button color="warn" *ngIf="isAdmin" (click)="deleteLanguage(l)"> Delete </button>
+      <button mat-button color="primary" *ngIf="isAdmin" (click)="edit(l)" matTooltip="Update">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-button color="warn" *ngIf="isAdmin" (click)="deleteLanguage(l)" matTooltip="delete">
+        <mat-icon>delete</mat-icon>
+      </button>
     </mat-list-item>
   </mat-list>
 </div>

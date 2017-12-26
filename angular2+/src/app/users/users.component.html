@@ -1,11 +1,12 @@
 <div *ngIf="users.data!==null">
   <div style="padding: 8px 24px 0">
     <mat-form-field class="full-width f20">
+      <mat-icon matPrefix>search</mat-icon>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
     <mat-toolbar>
       <button mat-fab color="primary" (click)="addUser()" matTooltip="Add new user">
-        <mat-icon>add</mat-icon>
+        <mat-icon>person_add</mat-icon>
       </button>
       <span class="spacer"></span>
       <button mat-fab color="primary" (click)="getAll()" matTooltip="Refresh">
@@ -34,14 +35,16 @@
     <ng-container matColumnDef="options">
       <mat-header-cell *matHeaderCellDef> </mat-header-cell>
       <mat-cell *matCellDef="let user">
-        <a mat-button color="primary" [routerLink]="['/users',user.username]">
-          Open
+        <a mat-button color="primary" [routerLink]="['/users',user.username]" matTooltip="Open">
+          <mat-icon>person</mat-icon>
         </a>
-        <button *ngIf="user.authorities.indexOf('pretplatilac')>-1" mat-button color="accent" (click)="updateUser(user)">
-          Update
+        <button *ngIf="user.authorities.indexOf('pretplatilac')>-1" mat-button color="accent"
+                (click)="updateUser(user)" matTooltip="Update">
+          <mat-icon>edit</mat-icon>
         </button>
-        <button *ngIf="user.authorities.indexOf('pretplatilac')>-1" mat-button color="warn" (click)="deleteUser(user)">
-          Delete
+        <button *ngIf="user.authorities.indexOf('pretplatilac')>-1" mat-button color="warn"
+                (click)="deleteUser(user)" matTooltip="Delete">
+          <mat-icon>delete</mat-icon>
         </button>
       </mat-cell>
     </ng-container>

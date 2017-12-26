@@ -63,13 +63,13 @@ public class ApiController {
     public ResponseEntity getNav(Principal principal){
         Collection<? extends GrantedAuthority> authorities = userService.findByUsername(principal.getName()).getAuthorities();
         List<NavItem>  navItems = new ArrayList<>();
-        navItems.add(new NavItem("Home","/",null));
+        navItems.add(new NavItem("Home","/","home"));
         if(authorities.stream().anyMatch(t -> t.getAuthority().equals("ROLE_ADMIN"))) {
-            navItems.add(new NavItem("Users","/users",null));
-            navItems.add(new NavItem("Categories","/categories",null));
-            navItems.add(new NavItem("Languages","/languages",null));
+            navItems.add(new NavItem("Users","/users", "people"));
+            navItems.add(new NavItem("Categories","/categories","library_books"));
+            navItems.add(new NavItem("Languages","/languages","language"));
         }else {
-            navItems.add(new NavItem("Categories","/categories",null));
+            navItems.add(new NavItem("Categories","/categories","library_books"));
         }
         return ResponseEntity.ok(navItems);
     }

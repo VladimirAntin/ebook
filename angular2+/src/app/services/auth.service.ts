@@ -38,6 +38,7 @@ export class AuthService {
     this.http.get('/auth/logout', httpOptions).subscribe(() => {
       setTimeout(() => window.location.reload(), 1000);
     }, () => {});
+
   }
   private getDefault() {
     if (!localStorage.getItem('token')) {

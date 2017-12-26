@@ -44,7 +44,6 @@ public class XMLIndexer {
 			long end = new Date().getTime();
 			System.out.println("Indexing " + numIndexed + " files took "+ (end - start) + " milliseconds");
 		}catch(IOException ioe){
-			ioe.printStackTrace();
 			System.out.println("Problem u pristupu direktorijumima");
 		}
 	}

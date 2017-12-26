@@ -1,11 +1,12 @@
 <div>
   <div style="padding: 8px 24px 0">
     <mat-form-field class="full-width f20">
+      <mat-icon matPrefix>search</mat-icon>
       <input matInput placeholder="Filter" [(ngModel)]="filter">
     </mat-form-field>
     <mat-toolbar *ngIf="isAdmin">
       <button mat-fab color="primary" matTooltip="Add new category" (click)="add()">
-        <mat-icon>add</mat-icon>
+        <mat-icon>library_add</mat-icon>
       </button>
       <span class="spacer"></span>
       <button mat-fab color="primary" (click)="getAll()" matTooltip="Refresh">
@@ -17,9 +18,15 @@
     <mat-list-item *ngFor="let c of categories | search:'name':filter">
       <mat-icon mat-list-icon>web_asset</mat-icon>
       <h4 mat-line>{{c.name}}</h4>
-      <button mat-button [routerLink]="['/categories/', c.id]" color="primary"> Open </button>
-      <button mat-button color="accent" *ngIf="isAdmin" (click)="edit(c)"> Update </button>
-      <button mat-button color="warn" *ngIf="isAdmin" (click)="deleteCategory(c)"> Delete </button>
+      <button mat-button [routerLink]="['/categories/', c.id]" color="primary" matTooltip="Open">
+        <mat-icon>library_books</mat-icon>
+      </button>
+      <button mat-button color="accent" *ngIf="isAdmin" (click)="edit(c)" matTooltip="Update">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-button color="warn" *ngIf="isAdmin" (click)="deleteCategory(c)" matTooltip="Delete">
+        <mat-icon>delete</mat-icon>
+      </button>
     </mat-list-item>
   </mat-list>
 </div>

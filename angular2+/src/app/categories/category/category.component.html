@@ -3,6 +3,7 @@
   <div class="w45 left">
     <div style="padding: 8px 24px 0">
       <mat-form-field class="full-width f20">
+        <mat-icon matPrefix>search</mat-icon>
         <input matInput placeholder="Search users" [(ngModel)]="filterUser">
       </mat-form-field>
     </div>
@@ -12,8 +13,8 @@
         <p mat-line>Username: <b class="right">{{u.username}}</b></p>
         <p mat-line>Name: <b class="right">{{u.firstName + ' ' + u.lastName}}</b></p>
         <p mat-line>Authorities: <b class="right">{{u.authorities}}</b></p>
-        <a mat-button color="primary" [routerLink]="['/users',u.username]">
-          Open
+        <a mat-fab color="primary" [routerLink]="['/users',u.username]" matTooltip="Open">
+          <mat-icon>person</mat-icon>
         </a>
       </mat-list-item>
     </mat-list>
@@ -21,11 +22,12 @@
   <div class="w45 right">
     <div style="padding: 8px 24px 0">
       <mat-form-field class="full-width f20">
+        <mat-icon matPrefix>search</mat-icon>
         <input matInput placeholder="Search ebooks" [(ngModel)]="filterEbook">
       </mat-form-field>
       <mat-toolbar *ngIf="isAdmin">
         <button mat-fab color="primary" matTooltip="Add new ebook in category" (click)="add()">
-          <mat-icon>add</mat-icon>
+          <mat-icon>add_box</mat-icon>
         </button>
       </mat-toolbar>
     </div>
@@ -39,8 +41,12 @@
         <button mat-button color="primary" (click)="download(e.filename)" matTooltip="Download file" *ngIf="e.filename">
           <mat-icon>file_download</mat-icon>
         </button>
-        <button mat-button color="accent" *ngIf="isAdmin" (click)="edit(e)"> Update </button>
-        <button mat-button color="warn" *ngIf="isAdmin" (click)="delete(e)"> Delete </button>
+        <button mat-button color="accent" *ngIf="isAdmin" (click)="edit(e)" matTooltip="Update">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button color="warn" *ngIf="isAdmin" (click)="delete(e)" matTooltip="Delete">
+          <mat-icon>delete</mat-icon>
+        </button>
         <p mat-line>Author: <b class="right">{{e.author}}</b></p>
         <p mat-line>Keywords: <b class="right">{{e.keywords}}</b></p>
         <p mat-line>Publication Year: <b class="right">{{e.publicationYear}}</b></p>
