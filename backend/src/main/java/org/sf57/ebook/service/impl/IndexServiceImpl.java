@@ -94,7 +94,6 @@ public class IndexServiceImpl implements IndexService{
         if(loginUser.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_ADMIN"))){
             return resultData;
         }else if(loginUser.getAuthorities().stream().anyMatch(a->a.getAuthority().equals("ROLE_PRETPLATILAC"))){
-            System.out.println("pretplatilac");
             for (ResultData rs:resultData) {
                 if(loginUser.getCategories().stream().allMatch(c->c.getId()!=rs.getCategory())){
                     rs.setLocation(null);

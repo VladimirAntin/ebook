@@ -24,7 +24,6 @@ nbdist/
 .nb-gradle/
 
 index/
-files/
 .mvn/
 mvnw
 mvnw.cmd

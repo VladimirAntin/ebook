@@ -28,8 +28,9 @@ public class EbookApplication {
     @PostConstruct
     public void init() {
         File file = new File(DATA_DIR_PATH);
-        if(file.isDirectory()){
-            if(file.list().length==0){
+        File indexFile = new File(index);
+        if(indexFile.isDirectory()){
+            if(indexFile.list().length==0){
                 Indexer.getInstance().index(file);
             }
         }
