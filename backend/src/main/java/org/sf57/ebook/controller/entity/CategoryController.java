@@ -46,7 +46,11 @@ public class CategoryController {
 
     @GetMapping("/{id}")
     public ResponseEntity one(@PathVariable long id){
-        return ResponseEntity.ok(categoryService.findOne(id));
+        Category category = categoryService.findOne(id);
+        if(category==null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(category);
     }
 
     @PostMapping
