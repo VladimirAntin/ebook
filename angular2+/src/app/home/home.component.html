@@ -51,6 +51,7 @@
     </button>
   </div>
 </div>
+<mat-spinner *ngIf="loadingResult"></mat-spinner>
 <div *ngIf="result.length!==0" >
   <mat-list>
     <mat-list-item *ngFor="let r of result" class="content">

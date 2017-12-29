@@ -49,3 +49,11 @@
 .w30{
   width: 30%;
 }
+app-categories, app-home, app-users, app-user, app-languages, app-category {
+  float: right;
+  width: 80%;
+}
+
+.mat-toolbar {
+  background-color: transparent;
+}

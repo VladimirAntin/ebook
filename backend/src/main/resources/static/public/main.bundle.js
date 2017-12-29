@@ -95,7 +95,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"center\">\n  <img width=\"50\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n</div>\n<app-navigation></app-navigation>\n<router-outlet></router-outlet>\n"
+module.exports = "<app-navigation></app-navigation>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -223,17 +223,17 @@ var AppModule = (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_14__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_7__angular_forms__["c" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MatButtonModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["o" /* MatSlideToggleModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatCheckboxModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatInputModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["u" /* MatToolbarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatDialogModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatFormFieldModule */], __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["b" /* HttpClientModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["t" /* MatTableModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["l" /* MatPaginatorModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatIconModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["m" /* MatProgressSpinnerModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["v" /* MatTooltipModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["n" /* MatSelectModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatSnackBarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MatChipsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatListModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["r" /* MatStepperModule */]
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_7__angular_forms__["c" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MatButtonModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["p" /* MatSlideToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatCheckboxModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatInputModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["v" /* MatToolbarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatDialogModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["o" /* MatSidenavModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatFormFieldModule */], __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["b" /* HttpClientModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["u" /* MatTableModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["l" /* MatPaginatorModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatIconModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["m" /* MatProgressSpinnerModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["w" /* MatTooltipModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["n" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["r" /* MatSnackBarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MatChipsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatListModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MatStepperModule */]
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MatButtonModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatCheckboxModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatInputModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["u" /* MatToolbarModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatDialogModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatFormFieldModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["t" /* MatTableModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["l" /* MatPaginatorModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatIconModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["m" /* MatProgressSpinnerModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["v" /* MatTooltipModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["n" /* MatSelectModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatSnackBarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MatChipsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatListModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["r" /* MatStepperModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["o" /* MatSlideToggleModule */]
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MatButtonModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatCheckboxModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatInputModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["v" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatDialogModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatFormFieldModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["u" /* MatTableModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["l" /* MatPaginatorModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatIconModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["m" /* MatProgressSpinnerModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["w" /* MatTooltipModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["n" /* MatSelectModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["o" /* MatSidenavModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["r" /* MatSnackBarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MatChipsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatListModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MatStepperModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["p" /* MatSlideToggleModule */]
             ],
             entryComponents: [__WEBPACK_IMPORTED_MODULE_6__login_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_12__users_add_user_add_user_component__["a" /* AddUserComponent */], __WEBPACK_IMPORTED_MODULE_17__users_edit_user_edit_user_component__["a" /* EditUserComponent */], __WEBPACK_IMPORTED_MODULE_30__change_password_change_password_component__["a" /* ChangePasswordComponent */],
                 __WEBPACK_IMPORTED_MODULE_20__categories_add_edit_category_add_edit_category_component__["a" /* AddEditCategoryComponent */], __WEBPACK_IMPORTED_MODULE_24__languages_add_edit_lang_add_edit_lang_component__["a" /* AddEditLangComponent */], __WEBPACK_IMPORTED_MODULE_27__categories_add_ebook_add_ebook_component__["a" /* AddEbookComponent */], __WEBPACK_IMPORTED_MODULE_29__categories_edit_ebook_edit_ebook_component__["a" /* EditEbookComponent */]],
@@ -380,7 +380,7 @@ var AddEbookComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/categories/add-ebook/add-ebook.component.css")]
         }),
         __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MAT_DIALOG_DATA */])),
-        __metadata("design:paramtypes", [Object, __WEBPACK_IMPORTED_MODULE_1__angular_material__["p" /* MatSnackBar */],
+        __metadata("design:paramtypes", [Object, __WEBPACK_IMPORTED_MODULE_1__angular_material__["q" /* MatSnackBar */],
             __WEBPACK_IMPORTED_MODULE_2__services_file_service__["a" /* FileService */], __WEBPACK_IMPORTED_MODULE_5__services_ebook_service__["a" /* EbookService */],
             __WEBPACK_IMPORTED_MODULE_6__services_category_service__["a" /* CategoryService */], __WEBPACK_IMPORTED_MODULE_7__services_language_service__["a" /* LanguageService */]])
     ], AddEbookComponent);
@@ -596,7 +596,7 @@ var CategoriesComponent = (function () {
             template: __webpack_require__("../../../../../src/app/categories/categories.component.html"),
             styles: [__webpack_require__("../../../../../src/app/categories/categories.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["p" /* MatSnackBar */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatSnackBar */],
             __WEBPACK_IMPORTED_MODULE_1__services_category_service__["a" /* CategoryService */], __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]])
     ], CategoriesComponent);
     return CategoriesComponent;
@@ -770,7 +770,7 @@ var CategoryComponent = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_2__services_category_service__["a" /* CategoryService */],
             __WEBPACK_IMPORTED_MODULE_5__services_file_service__["a" /* FileService */], __WEBPACK_IMPORTED_MODULE_6__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_8__services_ebook_service__["a" /* EbookService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_material__["p" /* MatSnackBar */]])
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatSnackBar */]])
     ], CategoryComponent);
     return CategoryComponent;
 }());
@@ -902,7 +902,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/change-password/change-password.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 mat-dialog-title>Edit Profile</h2>\n<mat-dialog-content>\n  <mat-form-field class=\"full-width\">\n    <input matInput placeholder=\"Old password\" type=\"password\" maxlength=\"30\" [(ngModel)]=\"data.user.oldPassword\" required>\n    <mat-hint align=\"end\">{{data.user.oldPassword.length}}/30</mat-hint>\n  </mat-form-field>\n  <br>\n  <mat-form-field class=\"full-width\">\n    <input matInput placeholder=\"New password\" type=\"password\" maxlength=\"30\" [(ngModel)]=\"data.user.newPassword\" required>\n    <mat-hint align=\"end\">{{data.user.newPassword.length}}/30</mat-hint>\n  </mat-form-field>\n  <br>\n  <mat-form-field class=\"full-width\">\n    <input matInput placeholder=\"Repeat new password\" type=\"password\" maxlength=\"30\" [(ngModel)]=\"data.user.newPasswordRepeat\" required>\n    <mat-hint align=\"end\">{{data.user.newPasswordRepeat.length}}/30</mat-hint>\n  </mat-form-field>\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-icon-button [mat-dialog-close]=\"{user:data.user }\"\n          color=\"primary\" matTooltip=\"Edit\"\n          [disabled]=\"data.user.oldPassword.trim()==='' ||\n                      data.user.newPassword.trim()==='' ||\n                      data.user.newPasswordRepeat.trim()==='' ||\n                      data.user.newPassword!==data.user.newPasswordRepeat\">\n    <mat-icon>edit</mat-icon>\n  </button>\n  <span class=\"spacer\"></span>\n  <button mat-icon-button mat-dialog-close matTooltip=\"Close\">\n    <mat-icon>close</mat-icon>\n  </button>\n</mat-dialog-actions>\n"
+module.exports = "<h2 mat-dialog-title>Edit Profile</h2>\n<mat-dialog-content>\n  <mat-form-field class=\"full-width\">\n    <input matInput placeholder=\"Old password\" type=\"password\" maxlength=\"30\" [(ngModel)]=\"data.user.oldPassword\" required>\n    <mat-hint align=\"end\">{{data.user.oldPassword.length}}/30</mat-hint>\n    <mat-icon matSuffix>visibility</mat-icon>\n  </mat-form-field>\n  <br>\n  <mat-form-field class=\"full-width\">\n    <input matInput placeholder=\"New password\" type=\"password\" maxlength=\"30\" [(ngModel)]=\"data.user.newPassword\" required>\n    <mat-hint align=\"end\">{{data.user.newPassword.length}}/30</mat-hint>\n    <mat-icon matSuffix>visibility</mat-icon>\n  </mat-form-field>\n  <br>\n  <mat-form-field class=\"full-width\">\n    <input matInput placeholder=\"Repeat new password\" type=\"password\" maxlength=\"30\" [(ngModel)]=\"data.user.newPasswordRepeat\" required>\n    <mat-hint align=\"end\">{{data.user.newPasswordRepeat.length}}/30</mat-hint>\n    <mat-icon matSuffix>visibility</mat-icon>\n  </mat-form-field>\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button mat-icon-button [mat-dialog-close]=\"{user:data.user }\"\n          color=\"primary\" matTooltip=\"Edit\"\n          [disabled]=\"data.user.oldPassword.trim()==='' ||\n                      data.user.newPassword.trim()==='' ||\n                      data.user.newPasswordRepeat.trim()==='' ||\n                      data.user.newPassword!==data.user.newPasswordRepeat\">\n    <mat-icon>edit</mat-icon>\n  </button>\n  <span class=\"spacer\"></span>\n  <button mat-icon-button mat-dialog-close matTooltip=\"Close\">\n    <mat-icon>close</mat-icon>\n  </button>\n</mat-dialog-actions>\n"
 
 /***/ }),
 
@@ -968,7 +968,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"center f20\">\n  <mat-slide-toggle color=\"accent\" id=\"bool_button\"\n                    [checked]=\"queryType\" (change)=\"changeQueryType(queryType)\">\n    {{queryType? 'Boolean Query' : 'Standard Query'}}\n  </mat-slide-toggle>\n  <br>\n  <div *ngIf=\"!queryType\">\n    <mat-form-field>\n      <mat-select placeholder=\"Field\" [(ngModel)]=\"query.field\">\n        <mat-option *ngFor=\"let f of fields\" [value]=\"f\">{{f | uppercase}}</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <mat-form-field class=\"w30\">\n      <input matInput type=\"text\" placeholder=\"Search\" [(ngModel)]=\"query.value\">\n    </mat-form-field>\n    <mat-form-field>\n      <mat-select placeholder=\"Query\" [(ngModel)]=\"query.numQ\">\n        <mat-option *ngFor=\"let q of queries; let i=index\" [value]=\"i\">{{q}}</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <br>\n    <button mat-fab color=\"primary\" (click)=\"search()\" [disabled]=\"query.value===''\">\n      <mat-icon>search</mat-icon>\n    </button>\n  </div>\n  <div *ngIf=\"queryType\">\n    <div *ngFor=\"let b of boolQuery.queries\">\n      <mat-form-field>\n        <mat-select placeholder=\"Field\" [(ngModel)]=\"b.field\">\n          <mat-option *ngFor=\"let f of fields\" [value]=\"f\">{{f | uppercase}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <mat-form-field class=\"w30\">\n        <input matInput type=\"text\" placeholder=\"Search\" [(ngModel)]=\"b.value\">\n      </mat-form-field>\n      <button mat-mini-fab color=\"primary\" matTooltip=\"Add new Field\" (click)=\"addField()\"\n              [disabled]=\"boolQuery.queries.length >= 15\">\n        <mat-icon>add</mat-icon>\n      </button>\n      <button mat-mini-fab color=\"warn\" matTooltip=\"Remove field\" (click)=\"removeField(b)\"\n              [disabled]=\"boolQuery.queries.length == 1\">\n        <mat-icon>delete</mat-icon>\n      </button>\n    </div>\n    <mat-slide-toggle color=\"accent\"\n                      [checked]=\"must\" (change)=\"changeQuery(must)\">\n      {{must? 'Must' : 'Should'}}\n    </mat-slide-toggle>\n    <button mat-fab color=\"primary\" [disabled]=\"isValidBool()\" (click)=\"search(true)\">\n      <mat-icon>search</mat-icon>\n    </button>\n  </div>\n</div>\n<div *ngIf=\"result.length!==0\" >\n  <mat-list>\n    <mat-list-item *ngFor=\"let r of result\" class=\"content\">\n      <p mat-line><b>{{r.title}}</b></p>\n      <p mat-line><i>{{r.keywords}}</i></p>\n      <p mat-line [innerHTML]=\"r.highlight\"></p>\n      <button mat-button color=\"primary\" (click)=\"openPdf(r.href)\" matTooltip=\"Open in new tab\" *ngIf=\"r.location\">\n        <mat-icon>open_in_new</mat-icon>\n      </button>\n      <button mat-button color=\"primary\" (click)=\"download(r.location)\" matTooltip=\"Download file\" *ngIf=\"r.location\">\n        <mat-icon>file_download</mat-icon>\n      </button>\n      <mat-divider></mat-divider>\n    </mat-list-item>\n  </mat-list>\n</div>\n"
+module.exports = "<div class=\"center f20\">\n  <mat-slide-toggle color=\"accent\" id=\"bool_button\"\n                    [checked]=\"queryType\" (change)=\"changeQueryType(queryType)\">\n    {{queryType? 'Boolean Query' : 'Standard Query'}}\n  </mat-slide-toggle>\n  <br>\n  <div *ngIf=\"!queryType\">\n    <mat-form-field>\n      <mat-select placeholder=\"Field\" [(ngModel)]=\"query.field\">\n        <mat-option *ngFor=\"let f of fields\" [value]=\"f\">{{f | uppercase}}</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <mat-form-field class=\"w30\">\n      <input matInput type=\"text\" placeholder=\"Search\" [(ngModel)]=\"query.value\">\n    </mat-form-field>\n    <mat-form-field>\n      <mat-select placeholder=\"Query\" [(ngModel)]=\"query.numQ\">\n        <mat-option *ngFor=\"let q of queries; let i=index\" [value]=\"i\">{{q}}</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <br>\n    <button mat-fab color=\"primary\" (click)=\"search()\" [disabled]=\"query.value===''\">\n      <mat-icon>search</mat-icon>\n    </button>\n  </div>\n  <div *ngIf=\"queryType\">\n    <div *ngFor=\"let b of boolQuery.queries\">\n      <mat-form-field>\n        <mat-select placeholder=\"Field\" [(ngModel)]=\"b.field\">\n          <mat-option *ngFor=\"let f of fields\" [value]=\"f\">{{f | uppercase}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <mat-form-field class=\"w30\">\n        <input matInput type=\"text\" placeholder=\"Search\" [(ngModel)]=\"b.value\">\n      </mat-form-field>\n      <button mat-mini-fab color=\"primary\" matTooltip=\"Add new Field\" (click)=\"addField()\"\n              [disabled]=\"boolQuery.queries.length >= 15\">\n        <mat-icon>add</mat-icon>\n      </button>\n      <button mat-mini-fab color=\"warn\" matTooltip=\"Remove field\" (click)=\"removeField(b)\"\n              [disabled]=\"boolQuery.queries.length == 1\">\n        <mat-icon>delete</mat-icon>\n      </button>\n    </div>\n    <mat-slide-toggle color=\"accent\"\n                      [checked]=\"must\" (change)=\"changeQuery(must)\">\n      {{must? 'Must' : 'Should'}}\n    </mat-slide-toggle>\n    <button mat-fab color=\"primary\" [disabled]=\"isValidBool()\" (click)=\"search(true)\">\n      <mat-icon>search</mat-icon>\n    </button>\n  </div>\n</div>\n<mat-spinner *ngIf=\"loadingResult\"></mat-spinner>\n<div *ngIf=\"result.length!==0\" >\n  <mat-list>\n    <mat-list-item *ngFor=\"let r of result\" class=\"content\">\n      <p mat-line><b>{{r.title}}</b></p>\n      <p mat-line><i>{{r.keywords}}</i></p>\n      <p mat-line [innerHTML]=\"r.highlight\"></p>\n      <button mat-button color=\"primary\" (click)=\"openPdf(r.href)\" matTooltip=\"Open in new tab\" *ngIf=\"r.location\">\n        <mat-icon>open_in_new</mat-icon>\n      </button>\n      <button mat-button color=\"primary\" (click)=\"download(r.location)\" matTooltip=\"Download file\" *ngIf=\"r.location\">\n        <mat-icon>file_download</mat-icon>\n      </button>\n      <mat-divider></mat-divider>\n    </mat-list-item>\n  </mat-list>\n</div>\n"
 
 /***/ }),
 
@@ -1005,6 +1005,7 @@ var HomeComponent = (function () {
         this.fileService = fileService;
         this.fields = ['title', 'author', 'keyword', 'text', 'language'];
         this.queries = ['Regular', 'Fuzzy', 'Pharse', 'Range', 'Prefix'];
+        this.loadingResult = false;
         this.result = [];
         this.must = false;
         this.queryType = false;
@@ -1018,6 +1019,7 @@ var HomeComponent = (function () {
     HomeComponent.prototype.download = function (filename) { this.fileService.downloadFile(filename); };
     HomeComponent.prototype.search = function (bool) {
         var _this = this;
+        this.loadingResult = true;
         var queryTypeReturnService;
         if (bool) {
             queryTypeReturnService = this.searchService.searchBool(this.boolQuery);
@@ -1039,6 +1041,7 @@ var HomeComponent = (function () {
                     _this.result[index].highlight = _this.result[index].highlight.replace('null', '');
                 });
             }
+            _this.loadingResult = false;
         }, function () {
             _this.snackBar.open('Error with your query, try again!', 'Ok', {
                 duration: 4000, verticalPosition: 'top'
@@ -1057,7 +1060,7 @@ var HomeComponent = (function () {
             template: __webpack_require__("../../../../../src/app/home/home.component.html"),
             styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_search_service__["a" /* SearchService */], __WEBPACK_IMPORTED_MODULE_3__angular_material__["p" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_4__services_file_service__["a" /* FileService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_search_service__["a" /* SearchService */], __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_4__services_file_service__["a" /* FileService */]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -1277,7 +1280,7 @@ var LanguagesComponent = (function () {
             template: __webpack_require__("../../../../../src/app/languages/languages.component.html"),
             styles: [__webpack_require__("../../../../../src/app/languages/languages.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MatSnackBar */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MatSnackBar */],
             __WEBPACK_IMPORTED_MODULE_4__services_language_service__["a" /* LanguageService */], __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]])
     ], LanguagesComponent);
     return LanguagesComponent;
@@ -1488,7 +1491,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "mat-nav-list {\n  float: left;\n  width: 12%;\n  height: 88vh;\n  padding: 2em;\n  margin: 1em;\n  background-color: rgba(222,184,135,0.5);\n  position: fixed;\n  border-radius: 25px;\n}\n\nmat-toolbar {\n  float: right;\n  width: 80%;\n}\n", ""]);
 
 // exports
 
@@ -1501,7 +1504,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/navigation/navigation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Ebook</span>\n  </mat-toolbar-row>\n  <mat-toolbar-row *ngIf=\"!nav_items || nav_items.length==0\">\n    <mat-spinner></mat-spinner>\n  </mat-toolbar-row>\n  <mat-toolbar-row>\n    <button *ngFor=\"let nav of nav_items\" mat-button color=\"primary\" [routerLink]=\"[nav.route]\" matTooltip=\"{{nav.name}}\">\n      <mat-icon>{{nav.icon}}</mat-icon>\n      {{nav.name}}\n    </button>\n    <button mat-button color=\"primary\" [routerLink]=\"['users/', me.username]\" *ngIf=\"login\">\n      <mat-icon>person</mat-icon>\n      Profile\n    </button>\n    <span class=\"spacer\"></span>\n    <button mat-button *ngIf=\"login\" color=\"primary\" (click)=\"changePassword()\">\n      <mat-icon>edit</mat-icon>\n      Change password\n    </button>\n    <button mat-button *ngIf=\"login\" color=\"primary\" (click)=\"editProfile()\">\n      <mat-icon>edit</mat-icon>\n      Edit profile\n    </button>\n    <button mat-button *ngIf=\"!login\" (click)=\"loginPage()\">Login</button>\n    <button mat-button *ngIf=\"login\" (click)=\"logout()\">Logout</button>\n  </mat-toolbar-row>\n</mat-toolbar>\n"
+module.exports = "<mat-nav-list>\n  <a matSubheader routerLink=\"/\">\n    <img width=\"50\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n    Ebook\n  </a>\n  <mat-divider></mat-divider>\n  <mat-spinner *ngIf=\"!nav_items || nav_items.length==0\"></mat-spinner>\n  <mat-list-item *ngFor=\"let nav of nav_items\" [routerLink]=\"[nav.route]\" matTooltip=\"{{nav.name}}\">\n    <mat-icon matListIcon>{{nav.icon}}</mat-icon>\n    {{nav.name}}\n    <mat-divider></mat-divider>\n  </mat-list-item>\n</mat-nav-list>\n<mat-toolbar>\n  <mat-toolbar-row>\n    <span class=\"spacer\"></span>\n    <button mat-button *ngIf=\"login\" color=\"primary\" (click)=\"changePassword()\">\n      <mat-icon>edit</mat-icon>\n      Change password\n    </button>\n    <button mat-button *ngIf=\"login\" color=\"primary\" (click)=\"editProfile()\">\n      <mat-icon>edit</mat-icon>\n      Edit profile\n    </button>\n    <button mat-button *ngIf=\"!login\" (click)=\"loginPage()\">\n      Login\n      <mat-icon>input</mat-icon>\n    </button>\n    <button mat-button *ngIf=\"login\" (click)=\"logout()\" color=\"warn\">\n      <mat-icon>input</mat-icon>\n      Logout\n    </button>\n  </mat-toolbar-row>\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -1637,7 +1640,7 @@ var NavigationComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/navigation/navigation.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_7__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_3__angular_material__["p" /* MatSnackBar */]])
+            __WEBPACK_IMPORTED_MODULE_7__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatSnackBar */]])
     ], NavigationComponent);
     return NavigationComponent;
 }());
@@ -1667,7 +1670,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/not-found/not-found.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"center\">\n      <h1>Page not found</h1>\n      <img src=\"assets/404-snow.gif\" width=\"400\">\n      <br>\n      <p>{{date | date: 'dd.MM.yyyy.'}}</p>\n      <p>{{date | date: 'HH:mm'}}</p>\n      <p><i>{{location}}</i></p>\n</div>\n"
+module.exports = "<div class=\"center\">\n      <img src=\"assets/404-opt.png\" width=\"400\">\n      <br>\n      <p>{{date | date: 'dd.MM.yyyy.'}}</p>\n      <p>{{date | date: 'HH:mm'}}</p>\n      <p><i>{{location}}</i></p>\n</div>\n"
 
 /***/ }),
 
@@ -2493,7 +2496,7 @@ var UsersComponent = (function () {
         this.userService = userService;
         this.snackBar = snackBar;
         this.displayedColumns = ['name', 'surname', 'username', 'authorities', 'options'];
-        this.users = new __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatTableDataSource */]();
+        this.users = new __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MatTableDataSource */]();
     }
     UsersComponent.prototype.applyFilter = function (filterValue) {
         filterValue = filterValue.trim(); // Remove whitespace
@@ -2586,7 +2589,7 @@ var UsersComponent = (function () {
             template: __webpack_require__("../../../../../src/app/users/users.component.html"),
             styles: [__webpack_require__("../../../../../src/app/users/users.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MatSnackBar */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MatSnackBar */]])
     ], UsersComponent);
     return UsersComponent;
 }());

@@ -1,0 +1,15 @@
+mat-nav-list {
+  float: left;
+  width: 12%;
+  height: 88vh;
+  padding: 2em;
+  margin: 1em;
+  background-color: rgba(222,184,135,0.5);
+  position: fixed;
+  border-radius: 25px;
+}
+
+mat-toolbar {
+  float: right;
+  width: 80%;
+}

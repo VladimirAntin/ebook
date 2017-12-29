@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   fields = ['title', 'author', 'keyword', 'text', 'language' ];
   queries = [ 'Regular', 'Fuzzy', 'Pharse', 'Range', 'Prefix'];
-
+  loadingResult = false;
   result: ResultData[] = [];   must = false;
   queryType = false; query = new Query();
   boolQuery = new BoolQuery();
@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
   download(filename: string) { this.fileService.downloadFile(filename); }
 
   search(bool) {
+    this.loadingResult = true;
     let queryTypeReturnService;
     if (bool) {
       queryTypeReturnService = this.searchService.searchBool(this.boolQuery);
@@ -50,6 +51,7 @@ export class HomeComponent implements OnInit {
           this.result[index].highlight = this.result[index].highlight.replace('null', '');
         });
       }
+      this.loadingResult = false;
     },  () => {
       this.snackBar.open('Error with your query, try again!', 'Ok', {
         duration: 4000, verticalPosition: 'top'

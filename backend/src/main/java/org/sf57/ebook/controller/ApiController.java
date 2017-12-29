@@ -71,6 +71,9 @@ public class ApiController {
         }else {
             navItems.add(new NavItem("Categories","/categories","library_books"));
         }
+        if(!authorities.stream().anyMatch(t -> t.getAuthority().equals("ROLE_POSETILAC"))){
+            navItems.add(new NavItem("Profile","/users/"+principal.getName(), "person"));            
+        }
         return ResponseEntity.ok(navItems);
     }
 }
