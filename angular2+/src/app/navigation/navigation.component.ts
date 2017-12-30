@@ -9,6 +9,7 @@ import {UserService} from '../services/user.service';
 import {NavItem} from '../model/nav-item';
 import {ChangePasswordComponent} from "../change-password/change-password.component";
 import {UserPassword} from "../model/user-password";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navigation',
@@ -20,7 +21,7 @@ export class NavigationComponent {
   nav_items: NavItem[]; login: boolean;
   me = new UserApi();
   constructor(public dialog: MatDialog, private authService: AuthService,
-              private userService: UserService, public snackBar: MatSnackBar) {
+              private userService: UserService, public snackBar: MatSnackBar, private _router: Router) {
     this.check();
   }
 

@@ -12,8 +12,7 @@ import {AddEditLangComponent} from './add-edit-lang/add-edit-lang.component';
 })
 export class LanguagesComponent {
 
-  filter;
-  languages;
+  filter; languages;
   isAdmin = false;
   constructor(public dialog: MatDialog, public snackBar: MatSnackBar,
               private languageService: LanguageService, private authService: AuthService) {

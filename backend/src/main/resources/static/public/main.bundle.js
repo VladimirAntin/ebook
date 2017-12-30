@@ -1146,7 +1146,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n", ""]);
 
 // exports
 
@@ -1159,7 +1159,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/languages/languages.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isAdmin\">\n  <div style=\"padding: 8px 24px 0\">\n    <mat-form-field class=\"full-width f20\">\n      <mat-icon matPrefix>search</mat-icon>\n      <input matInput placeholder=\"Filter\" [(ngModel)]=\"filter\">\n    </mat-form-field>\n    <mat-toolbar>\n      <button mat-fab color=\"primary\" matTooltip=\"Add new language\" (click)=\"add()\">\n        <mat-icon>add</mat-icon>\n      </button>\n      <span class=\"spacer\"></span>\n      <button mat-fab color=\"primary\" (click)=\"getAll()\" matTooltip=\"Refresh\">\n        <mat-icon>refresh</mat-icon>\n      </button>\n    </mat-toolbar>\n  </div>\n  <mat-list>\n    <mat-list-item *ngFor=\"let l of languages | search:'name':filter\">\n      <mat-icon mat-list-icon>language</mat-icon>\n      <h4 mat-line>{{l.name}}</h4>\n      <button mat-button color=\"primary\" *ngIf=\"isAdmin\" (click)=\"edit(l)\" matTooltip=\"Update\">\n        <mat-icon>edit</mat-icon>\n      </button>\n      <button mat-button color=\"warn\" *ngIf=\"isAdmin\" (click)=\"deleteLanguage(l)\" matTooltip=\"delete\">\n        <mat-icon>delete</mat-icon>\n      </button>\n      <mat-divider></mat-divider>\n    </mat-list-item>\n  </mat-list>\n</div>\n<app-not-found *ngIf=\"!isAdmin\"></app-not-found>\n"
+module.exports = "<div *ngIf=\"isAdmin\">\n  <div style=\"padding: 8px 24px 0\">\n    <mat-form-field class=\"full-width f20\">\n      <mat-icon matPrefix>search</mat-icon>\n      <input matInput placeholder=\"Filter\" [(ngModel)]=\"filter\">\n    </mat-form-field>\n    <mat-toolbar>\n      <button mat-fab color=\"primary\" matTooltip=\"Add new language\" (click)=\"add()\">\n        <mat-icon>add</mat-icon>\n      </button>\n      <span class=\"spacer\"></span>\n      <button mat-fab color=\"primary\" (click)=\"getAll()\" matTooltip=\"Refresh\">\n        <mat-icon>refresh</mat-icon>\n      </button>\n    </mat-toolbar>\n  </div>\n  <mat-list class=\"scrollbar\">\n    <mat-list-item *ngFor=\"let l of languages | search:'name':filter\">\n      <mat-icon mat-list-icon>language</mat-icon>\n      <h4 mat-line>{{l.name}}</h4>\n      <button mat-button color=\"primary\" *ngIf=\"isAdmin\" (click)=\"edit(l)\" matTooltip=\"Update\">\n        <mat-icon>edit</mat-icon>\n      </button>\n      <button mat-button color=\"warn\" *ngIf=\"isAdmin\" (click)=\"deleteLanguage(l)\" matTooltip=\"delete\">\n        <mat-icon>delete</mat-icon>\n      </button>\n      <mat-divider></mat-divider>\n    </mat-list-item>\n  </mat-list>\n</div>\n<app-not-found *ngIf=\"!isAdmin\"></app-not-found>\n"
 
 /***/ }),
 
@@ -1491,7 +1491,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "mat-nav-list {\n  float: left;\n  width: 12%;\n  height: 88vh;\n  padding: 2em;\n  margin: 1em;\n  background-color: rgba(222,184,135,0.5);\n  position: fixed;\n  border-radius: 25px;\n}\n\nmat-toolbar {\n  float: right;\n  width: 80%;\n}\n", ""]);
+exports.push([module.i, "mat-nav-list {\n  float: left;\n  width: 10%;\n  height: 80vh;\n  padding: 2em;\n  background-color: rgba(222,184,135,0.9);\n  position: fixed;\n  border-radius: 25px;\n}\n\nmat-toolbar {\n  float: right;\n  width: 80%;\n}\n\n.active {\n  border-color: black;\n  border-style: outset;\n}\n\nbutton {\n  margin: 0.5em;\n  border-radius: 2em;\n}\n", ""]);
 
 // exports
 
@@ -1504,7 +1504,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/navigation/navigation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-nav-list>\n  <a matSubheader routerLink=\"/\">\n    <img width=\"50\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n    Ebook\n  </a>\n  <mat-divider></mat-divider>\n  <mat-spinner *ngIf=\"!nav_items || nav_items.length==0\"></mat-spinner>\n  <mat-list-item *ngFor=\"let nav of nav_items\" [routerLink]=\"[nav.route]\" matTooltip=\"{{nav.name}}\">\n    <mat-icon matListIcon>{{nav.icon}}</mat-icon>\n    {{nav.name}}\n    <mat-divider></mat-divider>\n  </mat-list-item>\n</mat-nav-list>\n<mat-toolbar>\n  <mat-toolbar-row>\n    <span class=\"spacer\"></span>\n    <button mat-button *ngIf=\"login\" color=\"primary\" (click)=\"changePassword()\">\n      <mat-icon>edit</mat-icon>\n      Change password\n    </button>\n    <button mat-button *ngIf=\"login\" color=\"primary\" (click)=\"editProfile()\">\n      <mat-icon>edit</mat-icon>\n      Edit profile\n    </button>\n    <button mat-button *ngIf=\"!login\" (click)=\"loginPage()\">\n      Login\n      <mat-icon>input</mat-icon>\n    </button>\n    <button mat-button *ngIf=\"login\" (click)=\"logout()\" color=\"warn\">\n      <mat-icon>input</mat-icon>\n      Logout\n    </button>\n  </mat-toolbar-row>\n</mat-toolbar>\n"
+module.exports = "<mat-nav-list class=\"mat-elevation-z20\">\n  <a matSubheader routerLink=\"/\">\n    <img width=\"50\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n    Ebook\n  </a>\n  <mat-divider></mat-divider>\n  <mat-spinner *ngIf=\"!nav_items || nav_items.length==0\"></mat-spinner>\n  <mat-list-item *ngFor=\"let nav of nav_items\" [routerLink]=\"[nav.route]\"\n                 [ngClass]=\"{'active':_router.url===nav.route}\">\n    <mat-icon matListIcon>{{nav.icon}}</mat-icon>\n    {{nav.name}}\n    <mat-divider></mat-divider>\n  </mat-list-item>\n</mat-nav-list>\n<mat-toolbar>\n  <mat-toolbar-row>\n    <span class=\"spacer\"></span>\n    <button mat-raised-button *ngIf=\"login\" color=\"primary\" (click)=\"changePassword()\">\n      <mat-icon>edit</mat-icon>\n      Change password\n    </button>\n    <button mat-raised-button *ngIf=\"login\" color=\"primary\" (click)=\"editProfile()\">\n      <mat-icon>edit</mat-icon>\n      Edit profile\n    </button>\n    <button mat-raised-button *ngIf=\"!login\" (click)=\"loginPage()\">\n      Login\n      <mat-icon>input</mat-icon>\n    </button>\n    <button mat-raised-button *ngIf=\"login\" (click)=\"logout()\" color=\"warn\">\n      Logout\n      <mat-icon>input</mat-icon>\n    </button>\n  </mat-toolbar-row>\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -1523,6 +1523,7 @@ module.exports = "<mat-nav-list>\n  <a matSubheader routerLink=\"/\">\n    <img 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__change_password_change_password_component__ = __webpack_require__("../../../../../src/app/change-password/change-password.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__model_user_password__ = __webpack_require__("../../../../../src/app/model/user-password.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1542,12 +1543,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NavigationComponent = (function () {
-    function NavigationComponent(dialog, authService, userService, snackBar) {
+    function NavigationComponent(dialog, authService, userService, snackBar, _router) {
         this.dialog = dialog;
         this.authService = authService;
         this.userService = userService;
         this.snackBar = snackBar;
+        this._router = _router;
         this.me = new __WEBPACK_IMPORTED_MODULE_4__model_user_api__["a" /* UserApi */]();
         this.check();
     }
@@ -1640,7 +1643,7 @@ var NavigationComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/navigation/navigation.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_7__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatSnackBar */]])
+            __WEBPACK_IMPORTED_MODULE_7__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_10__angular_router__["c" /* Router */]])
     ], NavigationComponent);
     return NavigationComponent;
 }());
@@ -2521,6 +2524,7 @@ var UsersComponent = (function () {
         this.loading = true;
         this.userService.getAll().subscribe(function (data) {
             _this.users.data = data;
+            _this.users.paginator = _this.paginator;
             _this.loading = false;
         }, function (err) {
             if (err.status !== 403) {

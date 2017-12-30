@@ -41,6 +41,7 @@ export class UsersComponent implements OnInit {
     this.loading = true;
     this.userService.getAll().subscribe(data => {
       this.users.data = data;
+      this.users.paginator = this.paginator;
       this.loading = false;
     }, err => {
       if (err.status !== 403) {

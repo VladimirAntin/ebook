@@ -14,7 +14,7 @@
       </button>
     </mat-toolbar>
   </div>
-  <mat-list>
+  <mat-list class="scrollbar">
     <mat-list-item *ngFor="let l of languages | search:'name':filter">
       <mat-icon mat-list-icon>language</mat-icon>
       <h4 mat-line>{{l.name}}</h4>

@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   id;
   user = new UserApi();
   isAdmin = false;
-  constructor(private route: ActivatedRoute, private userService: UserService, private _router: Router) {}
+  constructor(private route: ActivatedRoute, private userService: UserService, public _router: Router) {}
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
     if ( isNaN(this.id) ) {
