@@ -13,12 +13,7 @@ mat-toolbar {
   width: 80%;
 }
 
-.active {
-  border-color: black;
-  border-style: outset;
-}
-
-button {
+mat-toolbar button {
   margin: 0.5em;
   border-radius: 2em;
 }

@@ -6,7 +6,7 @@ import {
   MatButtonModule, MatCheckboxModule, MatToolbarModule,
   MatDialogModule, MatInputModule, MatFormFieldModule, MatTableModule, MatPaginatorModule, MatIconModule,
   MatProgressSpinnerModule, MatTooltipModule, MatSelectModule, MatSnackBarModule, MatChipsModule, MatListModule,
-  MatStepperModule, MatSlideToggleModule, MatSidenavModule
+  MatStepperModule, MatSlideToggleModule
 } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -49,7 +49,7 @@ enableProdMode();
   imports: [
     AppRoutingModule,
     BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatSlideToggleModule,
-    MatCheckboxModule, MatInputModule, MatToolbarModule, MatDialogModule, MatSidenavModule,
+    MatCheckboxModule, MatInputModule, MatToolbarModule, MatDialogModule,
     MatFormFieldModule, HttpClientModule, MatTableModule, MatPaginatorModule,
     MatIconModule, MatProgressSpinnerModule, MatTooltipModule, MatSelectModule,
     MatSnackBarModule, MatChipsModule, MatListModule, MatStepperModule
@@ -57,7 +57,7 @@ enableProdMode();
   exports: [
     MatButtonModule, MatCheckboxModule, MatInputModule, MatToolbarModule,
     MatDialogModule, MatFormFieldModule, MatTableModule, MatPaginatorModule,
-    MatIconModule, MatProgressSpinnerModule, MatTooltipModule, MatSelectModule, MatSidenavModule,
+    MatIconModule, MatProgressSpinnerModule, MatTooltipModule, MatSelectModule,
     MatSnackBarModule, MatChipsModule, MatListModule, MatStepperModule, MatSlideToggleModule
   ],
   entryComponents: [ LoginComponent, AddUserComponent, EditUserComponent, ChangePasswordComponent,

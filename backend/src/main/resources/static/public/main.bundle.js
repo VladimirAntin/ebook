@@ -223,17 +223,17 @@ var AppModule = (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_14__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_7__angular_forms__["c" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MatButtonModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["p" /* MatSlideToggleModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatCheckboxModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatInputModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["v" /* MatToolbarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatDialogModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["o" /* MatSidenavModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatFormFieldModule */], __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["b" /* HttpClientModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["u" /* MatTableModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["l" /* MatPaginatorModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatIconModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["m" /* MatProgressSpinnerModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["w" /* MatTooltipModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["n" /* MatSelectModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["r" /* MatSnackBarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MatChipsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatListModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MatStepperModule */]
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_7__angular_forms__["c" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MatButtonModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["o" /* MatSlideToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatCheckboxModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatInputModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["u" /* MatToolbarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatDialogModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatFormFieldModule */], __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["b" /* HttpClientModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["t" /* MatTableModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["l" /* MatPaginatorModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatIconModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["m" /* MatProgressSpinnerModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["v" /* MatTooltipModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["n" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatSnackBarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MatChipsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatListModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["r" /* MatStepperModule */]
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MatButtonModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatCheckboxModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatInputModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["v" /* MatToolbarModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatDialogModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatFormFieldModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["u" /* MatTableModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["l" /* MatPaginatorModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatIconModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["m" /* MatProgressSpinnerModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["w" /* MatTooltipModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["n" /* MatSelectModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["o" /* MatSidenavModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_material__["r" /* MatSnackBarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MatChipsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatListModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MatStepperModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["p" /* MatSlideToggleModule */]
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["b" /* MatButtonModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatCheckboxModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["i" /* MatInputModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["u" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatDialogModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MatFormFieldModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["t" /* MatTableModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["l" /* MatPaginatorModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["h" /* MatIconModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["m" /* MatProgressSpinnerModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["v" /* MatTooltipModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["n" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatSnackBarModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MatChipsModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["j" /* MatListModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["r" /* MatStepperModule */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["o" /* MatSlideToggleModule */]
             ],
             entryComponents: [__WEBPACK_IMPORTED_MODULE_6__login_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_12__users_add_user_add_user_component__["a" /* AddUserComponent */], __WEBPACK_IMPORTED_MODULE_17__users_edit_user_edit_user_component__["a" /* EditUserComponent */], __WEBPACK_IMPORTED_MODULE_30__change_password_change_password_component__["a" /* ChangePasswordComponent */],
                 __WEBPACK_IMPORTED_MODULE_20__categories_add_edit_category_add_edit_category_component__["a" /* AddEditCategoryComponent */], __WEBPACK_IMPORTED_MODULE_24__languages_add_edit_lang_add_edit_lang_component__["a" /* AddEditLangComponent */], __WEBPACK_IMPORTED_MODULE_27__categories_add_ebook_add_ebook_component__["a" /* AddEbookComponent */], __WEBPACK_IMPORTED_MODULE_29__categories_edit_ebook_edit_ebook_component__["a" /* EditEbookComponent */]],
@@ -380,7 +380,7 @@ var AddEbookComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/categories/add-ebook/add-ebook.component.css")]
         }),
         __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MAT_DIALOG_DATA */])),
-        __metadata("design:paramtypes", [Object, __WEBPACK_IMPORTED_MODULE_1__angular_material__["q" /* MatSnackBar */],
+        __metadata("design:paramtypes", [Object, __WEBPACK_IMPORTED_MODULE_1__angular_material__["p" /* MatSnackBar */],
             __WEBPACK_IMPORTED_MODULE_2__services_file_service__["a" /* FileService */], __WEBPACK_IMPORTED_MODULE_5__services_ebook_service__["a" /* EbookService */],
             __WEBPACK_IMPORTED_MODULE_6__services_category_service__["a" /* CategoryService */], __WEBPACK_IMPORTED_MODULE_7__services_language_service__["a" /* LanguageService */]])
     ], AddEbookComponent);
@@ -596,7 +596,7 @@ var CategoriesComponent = (function () {
             template: __webpack_require__("../../../../../src/app/categories/categories.component.html"),
             styles: [__webpack_require__("../../../../../src/app/categories/categories.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatSnackBar */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_4__angular_material__["p" /* MatSnackBar */],
             __WEBPACK_IMPORTED_MODULE_1__services_category_service__["a" /* CategoryService */], __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]])
     ], CategoriesComponent);
     return CategoriesComponent;
@@ -770,7 +770,7 @@ var CategoryComponent = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_2__services_category_service__["a" /* CategoryService */],
             __WEBPACK_IMPORTED_MODULE_5__services_file_service__["a" /* FileService */], __WEBPACK_IMPORTED_MODULE_6__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_8__services_ebook_service__["a" /* EbookService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatSnackBar */]])
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["p" /* MatSnackBar */]])
     ], CategoryComponent);
     return CategoryComponent;
 }());
@@ -1060,7 +1060,7 @@ var HomeComponent = (function () {
             template: __webpack_require__("../../../../../src/app/home/home.component.html"),
             styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_search_service__["a" /* SearchService */], __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_4__services_file_service__["a" /* FileService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_search_service__["a" /* SearchService */], __WEBPACK_IMPORTED_MODULE_3__angular_material__["p" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_4__services_file_service__["a" /* FileService */]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -1280,7 +1280,7 @@ var LanguagesComponent = (function () {
             template: __webpack_require__("../../../../../src/app/languages/languages.component.html"),
             styles: [__webpack_require__("../../../../../src/app/languages/languages.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MatSnackBar */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MatSnackBar */],
             __WEBPACK_IMPORTED_MODULE_4__services_language_service__["a" /* LanguageService */], __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]])
     ], LanguagesComponent);
     return LanguagesComponent;
@@ -1491,7 +1491,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "mat-nav-list {\n  float: left;\n  width: 10%;\n  height: 80vh;\n  padding: 2em;\n  background-color: rgba(222,184,135,0.9);\n  position: fixed;\n  border-radius: 25px;\n}\n\nmat-toolbar {\n  float: right;\n  width: 80%;\n}\n\n/*.active {*/\n  /*border-color: black;*/\n  /*border-style: outset;*/\n/*}*/\n\nmat-toolbar button {\n  margin: 0.5em;\n  border-radius: 2em;\n}\n", ""]);
+exports.push([module.i, "mat-nav-list {\n  float: left;\n  width: 10%;\n  height: 80vh;\n  padding: 2em;\n  background-color: rgba(222,184,135,0.9);\n  position: fixed;\n  border-radius: 25px;\n}\n\nmat-toolbar {\n  float: right;\n  width: 80%;\n}\n\nmat-toolbar button {\n  margin: 0.5em;\n  border-radius: 2em;\n}\n", ""]);
 
 // exports
 
@@ -1643,7 +1643,7 @@ var NavigationComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/navigation/navigation.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_7__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_10__angular_router__["c" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_7__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_3__angular_material__["p" /* MatSnackBar */], __WEBPACK_IMPORTED_MODULE_10__angular_router__["c" /* Router */]])
     ], NavigationComponent);
     return NavigationComponent;
 }());
@@ -2499,7 +2499,7 @@ var UsersComponent = (function () {
         this.userService = userService;
         this.snackBar = snackBar;
         this.displayedColumns = ['name', 'surname', 'username', 'authorities', 'options'];
-        this.users = new __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MatTableDataSource */]();
+        this.users = new __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatTableDataSource */]();
     }
     UsersComponent.prototype.applyFilter = function (filterValue) {
         filterValue = filterValue.trim(); // Remove whitespace
@@ -2593,7 +2593,7 @@ var UsersComponent = (function () {
             template: __webpack_require__("../../../../../src/app/users/users.component.html"),
             styles: [__webpack_require__("../../../../../src/app/users/users.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MatSnackBar */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MatDialog */], __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MatSnackBar */]])
     ], UsersComponent);
     return UsersComponent;
 }());
