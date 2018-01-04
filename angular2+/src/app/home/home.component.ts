@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   fields = ['title', 'author', 'keyword', 'text', 'language' ];
   queries = [ 'Regular', 'Fuzzy', 'Pharse', 'Range', 'Prefix'];
   loadingResult = false;
-  result: ResultData[] = [];   must = false;
+  result: ResultData[] = [];
   queryType = false; query = new Query();
   boolQuery = new BoolQuery();
   constructor(private searchService: SearchService, private snackBar: MatSnackBar, private fileService: FileService) { }
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() { }
 
   changeQueryType(v) { this.queryType = !v; }
-  changeQuery(v) { this.must = !v; }
+  changeQuery(v) { this.boolQuery.must = !v; }
 
   openPdf(link) { window.open(link, '_blank'); }
   download(filename: string) { this.fileService.downloadFile(filename); }

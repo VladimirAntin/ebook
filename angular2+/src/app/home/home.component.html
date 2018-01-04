@@ -43,8 +43,8 @@
       </button>
     </div>
     <mat-slide-toggle color="accent"
-                      [checked]="must" (change)="changeQuery(must)">
-      {{must? 'Must' : 'Should'}}
+                      [checked]="boolQuery.must" (change)="changeQuery(boolQuery.must)">
+      {{boolQuery.must? 'Must' : 'Should'}}
     </mat-slide-toggle>
     <button mat-fab color="primary" [disabled]="isValidBool()" (click)="search(true)">
       <mat-icon>search</mat-icon>
@@ -64,7 +64,7 @@
       <button mat-button color="primary" (click)="download(r.location)" matTooltip="Download file" *ngIf="r.location">
         <mat-icon>file_download</mat-icon>
       </button>
-      <mat-divider></mat-divider>
+      <mat-divider mat-line></mat-divider>
     </mat-list-item>
   </mat-list>
 </div>

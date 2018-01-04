@@ -82,9 +82,9 @@ app-languages .mat-list, app-categories .mat-list {
   overflow-y: auto;
   height: 54vh;
 }
-app-home .mat-list, app-users .mat-table{
+app-users .mat-table{
   overflow-y: auto;
-  height: 46vh;
+  height: 42vh;
 }
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
