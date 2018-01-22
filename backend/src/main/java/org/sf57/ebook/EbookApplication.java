@@ -33,6 +33,9 @@ public class EbookApplication {
             if(indexFile.list().length==0){
                 Indexer.getInstance().index(file);
             }
+        }else{
+            indexFile.mkdirs();
+            Indexer.getInstance().index(file);
         }
     }
     @PreDestroy
