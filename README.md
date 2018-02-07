@@ -4,4 +4,4 @@
 
 	frontend: angular2+, material design
 
-    [Vladimir Antin personal site]: http://vladimirantin.me
+	[Vladimir Antin personal site](http://vladimirantin.me)
