@@ -1,7 +1,6 @@
-## Ebooks
+### backend app - spring boot
 
-	backend: spring-boot app
+spring configuration
 
-	frontend: angular2+, material design
-
-[Vladimir Antin personal site](https://vladimirantin.github.io)
+    mvn install
+    mvn spring-boot:run
