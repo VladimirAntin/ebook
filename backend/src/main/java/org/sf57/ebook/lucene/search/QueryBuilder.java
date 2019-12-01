@@ -4,14 +4,8 @@ package org.sf57.ebook.lucene.search;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.search.FuzzyQuery;
-import org.apache.lucene.search.PhraseQuery;
-import org.apache.lucene.search.PrefixQuery;
-import org.apache.lucene.search.Query;
-import org.apache.lucene.search.TermQuery;
-import org.apache.lucene.search.TermRangeQuery;
+import org.apache.lucene.search.*;
 import org.apache.lucene.util.BytesRef;
-
 import org.sf57.ebook.lucene.indexing.analysers.SerbianAnalyzer;
 import org.sf57.ebook.lucene.model.SearchType;
 

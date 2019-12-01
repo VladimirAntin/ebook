@@ -1,5 +1,10 @@
 package org.sf57.ebook.lucene.indexing.handlers;
 
+import org.apache.lucene.document.DateTools;
+import org.apache.poi.hpsf.SummaryInformation;
+import org.apache.poi.hwpf.extractor.WordExtractor;
+import org.sf57.ebook.lucene.model.IndexUnit;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,12 +12,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-
-import org.apache.lucene.document.DateTools;
-import org.apache.poi.hpsf.SummaryInformation;
-import org.apache.poi.hwpf.extractor.WordExtractor;
-
-import org.sf57.ebook.lucene.model.IndexUnit;
 
 public class WordHandler extends DocumentHandler {
 

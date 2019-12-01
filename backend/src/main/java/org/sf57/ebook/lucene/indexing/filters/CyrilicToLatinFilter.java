@@ -1,10 +1,10 @@
 package org.sf57.ebook.lucene.indexing.filters;
 
-import java.io.IOException;
-
 import org.apache.lucene.analysis.TokenFilter;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
+
+import java.io.IOException;
 
 public class CyrilicToLatinFilter extends TokenFilter{
 

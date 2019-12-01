@@ -1,12 +1,12 @@
 package org.sf57.ebook.lucene.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field.Store;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class IndexUnit {
 

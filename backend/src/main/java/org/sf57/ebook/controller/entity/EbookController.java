@@ -11,7 +11,6 @@ import org.sf57.ebook.service.EbookService;
 import org.sf57.ebook.service.IndexService;
 import org.sf57.ebook.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

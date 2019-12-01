@@ -2,12 +2,10 @@ package org.sf57.ebook.controller;
 
 
 import org.sf57.ebook.converter.UserToUserDto;
-import org.sf57.ebook.entity.Ebook;
 import org.sf57.ebook.entity.User;
 import org.sf57.ebook.entity.UserTokenState;
 import org.sf57.ebook.security.NavItem;
 import org.sf57.ebook.security.TokenHelper;
-import org.sf57.ebook.service.IndexService;
 import org.sf57.ebook.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.File;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collection;

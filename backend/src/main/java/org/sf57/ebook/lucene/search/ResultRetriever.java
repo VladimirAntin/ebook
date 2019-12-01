@@ -1,13 +1,5 @@
 package org.sf57.ebook.lucene.search;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.search.IndexSearcher;
@@ -23,6 +15,14 @@ import org.sf57.ebook.lucene.indexing.analysers.SerbianAnalyzer;
 import org.sf57.ebook.lucene.indexing.handlers.*;
 import org.sf57.ebook.lucene.model.RequiredHighlight;
 import org.sf57.ebook.lucene.model.ResultData;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class ResultRetriever {
 	
