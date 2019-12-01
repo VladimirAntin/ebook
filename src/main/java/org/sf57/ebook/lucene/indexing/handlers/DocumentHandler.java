@@ -1,8 +1,8 @@
 package org.sf57.ebook.lucene.indexing.handlers;
 
-import java.io.File;
-
 import org.sf57.ebook.lucene.model.IndexUnit;
+
+import java.io.File;
 
 public abstract class DocumentHandler {
 	/**

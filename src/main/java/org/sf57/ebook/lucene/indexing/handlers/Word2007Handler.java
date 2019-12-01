@@ -1,16 +1,16 @@
 package org.sf57.ebook.lucene.indexing.handlers;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-
 import org.apache.lucene.document.DateTools;
 import org.apache.poi.POIXMLProperties;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.sf57.ebook.lucene.model.IndexUnit;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 
 public class Word2007Handler extends DocumentHandler {
 

@@ -1,19 +1,21 @@
 package org.sf57.ebook.lucene.indexing;
 
+import org.apache.lucene.document.Document;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.index.IndexWriterConfig.OpenMode;
+import org.apache.lucene.index.Term;
+import org.apache.lucene.store.Directory;
+import org.apache.lucene.store.SimpleFSDirectory;
+import org.sf57.ebook.entity.Ebook;
+import org.sf57.ebook.lucene.indexing.analysers.SerbianAnalyzer;
+import org.sf57.ebook.lucene.indexing.handlers.DocumentHandler;
+import org.sf57.ebook.lucene.indexing.handlers.PDFHandler;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.util.ResourceBundle;
-
-import org.apache.lucene.document.Document;
-import org.apache.lucene.index.*;
-import org.apache.lucene.index.IndexWriterConfig.OpenMode;
-import org.apache.lucene.store.Directory;
-import org.apache.lucene.store.SimpleFSDirectory;
-
-import org.sf57.ebook.entity.Ebook;
-import org.sf57.ebook.lucene.indexing.analysers.SerbianAnalyzer;
-import org.sf57.ebook.lucene.indexing.handlers.*;
 
 public class Indexer {
 	

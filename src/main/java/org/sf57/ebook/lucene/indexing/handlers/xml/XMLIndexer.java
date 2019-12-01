@@ -1,11 +1,5 @@
 package org.sf57.ebook.lucene.indexing.handlers.xml;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.util.Date;
-
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field.Store;
 import org.apache.lucene.document.StringField;
@@ -15,6 +9,12 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.SimpleFSDirectory;
 import org.sf57.ebook.lucene.indexing.analysers.SerbianAnalyzer;
 import org.springframework.beans.factory.annotation.Value;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.util.Date;
 
 public class XMLIndexer {
 

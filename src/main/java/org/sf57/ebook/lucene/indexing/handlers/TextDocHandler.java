@@ -1,18 +1,12 @@
 package org.sf57.ebook.lucene.indexing.handlers;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import org.apache.lucene.document.DateTools;
+import org.sf57.ebook.lucene.model.IndexUnit;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-
-import org.apache.lucene.document.DateTools;
-
-import org.sf57.ebook.lucene.model.IndexUnit;
 
 public class TextDocHandler extends DocumentHandler {
 
