@@ -51,7 +51,7 @@
 .w30{
   width: 30%;
 }
-app-categories, app-home, app-users, app-user, app-languages, app-category {
+app-categories, app-home, app-users, app-user, app-languages, app-category, app-not-found {
   float: right;
   width: 82%;
   border-style: solid;
@@ -99,4 +99,21 @@ app-users .mat-table{
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: #D62929;
+}
+
+.mobile{
+  display: none;
+}
+
+@media screen and (max-width: 80em){
+  .mobile-false {
+    display: none;
+  }
+  .mobile{
+    display: unset;
+  }
+  app-categories, app-home, app-users, app-user, app-languages, app-category, app-not-found{
+    width: 100%;
+    height: 80vh;
+  }
 }
