@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import {LoginComponent} from '../login/login.component';
+import {LoginComponent} from '../auth/login/login.component';
 import {AuthService} from '../services/auth.service';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {UserApi} from '../model/user-api';
 import {User} from '../model/user';
-import {EditUserComponent} from '../users/edit-user/edit-user.component';
+import {EditUserComponent} from '../page/users/edit-user/edit-user.component';
 import {UserService} from '../services/user.service';
 import {NavItem} from '../model/nav-item';
-import {ChangePasswordComponent} from "../change-password/change-password.component";
+import {ChangePasswordComponent} from "../auth/change-password/change-password.component";
 import {UserPassword} from "../model/user-password";
 import {Router} from "@angular/router";
 
